@@ -32,6 +32,10 @@ Route::get('/dokter/profil', [MainController::class, 'profilDokter'])->middlewar
 Route::get('/dokter/jadwal', [MainController::class, 'jadwalDokter'])->middleware('guest');
 Route::get('/dokter/profil/{dokter}', [MainController::class, 'profilDokterDetail'])->middleware('guest');
 
+// layanan guest
+Route::get('/services', [MainController::class, 'layananIndex'])->middleware('guest');
+Route::get('/services/detail/{layanan}', [MainController::class, 'layananDetail'])->middleware('guest');
+
 
 // <-- Bagian Admin -->
 

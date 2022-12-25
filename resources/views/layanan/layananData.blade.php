@@ -51,31 +51,22 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
     <div class="row text-center">
         <div class="col-12">
             <h2 class="section-title">RS Graha Hermine</h2>
-            <h3 class="section-sub-title">Dokter Kami</h3>
+            <h3 class="section-sub-title">Layanan Kami</h3>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-12">
-            <div id="team-slide" class="team-slide">
-                @foreach($datas as $dokter)
-                <div class="item">
-                    <div class="ts-team-wrapper">
-                        <div class="team-img-wrapper">
-                            <img loading="lazy" class="w-100" src="{{ asset('storage/'.$dokter->image) }}" alt="team-img">
-                        </div>
-                        <div class="ts-team-content">
-                            <h3 class="ts-name text-white">{{ $dokter->nama }}</h3>
-                            <p class="ts-designation">{{ $dokter->poliklinik->poliklinik }}</p>
-                            <div class="team-social-icons">
-                                <a class="btn btn-primary" href="/dokter/profil/{{$dokter->slug}}"><small class="text-small">Lihat Jadwal</small> <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+        @foreach($layanans as $layanan)
+        <div class="col-md-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="card-body">
+                    <h3 class="card-title"><a href="">{{ $layanan->nama_layanan }}</a></h3>
+                    <p>{{$layanan->jenis_layanan}}</p>
+                    <a href="/services/detail/{{$layanan->slug}}" class="btn btn-primary">Selengkapnya</a>
                 </div>
-                @endforeach
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 

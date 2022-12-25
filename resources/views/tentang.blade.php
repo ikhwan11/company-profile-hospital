@@ -82,10 +82,8 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- Page slider end-->
-
-
-            </div><!-- Col end -->
+                </div>
+            </div>
         </div><!-- Content row end -->
 
     </div><!-- Container end -->

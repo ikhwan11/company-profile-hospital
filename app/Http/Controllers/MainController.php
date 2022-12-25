@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Banner;
 use App\Models\Dokter;
+use App\Models\Layanan;
+use App\Models\LayananImage;
 use App\Models\JadwalDokter;
 
 class MainController extends Controller
@@ -61,4 +63,20 @@ class MainController extends Controller
 
     // bagian layanan
 
+    public function layananIndex()
+    {
+        return view('layanan/layananData', [
+            'tittle' => 'Layanan',
+            'layanans' => Layanan::all()
+        ]);
+    }
+
+    public function layananDetail(Layanan $layanan)
+    {
+        return view('layanan/layananDetail', [
+            'tittle' => 'Layanan',
+            'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
+            'layanan' => $layanan
+        ]);
+    }
 }

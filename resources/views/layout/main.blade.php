@@ -108,7 +108,7 @@
                                             </ul>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="/layanan">Layanan Kami</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/services">Layanan Kami</a></li>
                                         <!-- <li class="nav-item dropdown">
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Layanan <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown-menu" role="menu">
@@ -122,13 +122,11 @@
 
                                         <li class="nav-item"><a class="nav-link" href="/artikel">Artikel</a></li>
 
-                                        <li class="nav-item"><a class="nav-link" href="#">Karir</a></li>
-
                                         <li class="nav-item dropdown">
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Galeri</a></li>
-                                                <li><a href="#">Partnership</a></li>
+                                                <li><a href="#">Karir</a></li>
                                                 <li><a href="#">Hubungi Kami</a></li>
                                             </ul>
                                         </li>
