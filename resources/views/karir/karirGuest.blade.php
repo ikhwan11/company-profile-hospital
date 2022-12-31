@@ -16,6 +16,13 @@
                 </form>
             </div>
         </div>
+        @if(session()->has('pesan'))
+        <div class="alert alert-success" role="alert">
+            {{ session('pesan') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+        </div>
+        @endif
         <div class="row">
             <div class="col">
                 @if($lowongan->count())
@@ -24,7 +31,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->posisi }}</h5>
                         <p class="card-text">{{ $data->excerpt }}</p>
-                        <a href="#" class="btn btn-primary">Kirim Lamaran</a>
+                        <a href="/karir/{{$data->slug}}" class="btn btn-primary">Kirim Lamaran</a>
                     </div>
                 </div>
                 @endforeach

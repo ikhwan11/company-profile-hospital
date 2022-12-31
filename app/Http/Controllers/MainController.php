@@ -9,6 +9,7 @@ use App\Models\Dokter;
 use App\Models\Layanan;
 use App\Models\LayananImage;
 use App\Models\JadwalDokter;
+use App\Models\Lamaran;
 use App\Models\Lowongan;
 
 class MainController extends Controller
@@ -89,5 +90,35 @@ class MainController extends Controller
             'tittle' => 'Karir',
             'lowongan' => Lowongan::latest()->filter(request(['search']))->paginate(10)->withQueryString()
         ]);
+    }
+
+    public function karirShow(Lowongan $lowongan)
+    {
+        return view('karir/karirGuestDetail', [
+            'tittle' => 'Karir',
+            'lowongan' => $lowongan
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+
+        $validatedData = $request->validate([
+            'nama_pelamar' => 'required|max:255',
+            'lowongan_id' => 'required',
+            'no_hp' => 'required|max:255',
+            'email' => 'required|email',
+            'alamat' => 'required',
+            'tentang_pelamar' => 'required',
+            'cv' => 'required|file|max:2048|mimes:pdf',
+        ]);
+
+        if ($request->file('cv')) {
+            $validatedData['cv'] = $request->file('cv')->store('karir-cv');
+        }
+
+        Lamaran::create($validatedData);
+
+        return redirect('/karir')->with('pesan', 'Lamaran Berhasil di Apply');
     }
 }

@@ -59,7 +59,7 @@
                                 <td>{{$lowongan->periode_akhir}}</td>
                                 <td>
                                     <a href="/dashboard/lowongan/{{$lowongan->slug}}" class="btn btn-success" title="Detail Lowongan"><i class="bi bi-eye"></i></a>
-                                    <a href="#" class="btn btn-warning" title="Daftar pelamar"><i class="bi bi-bag-fill"></i></a>
+                                    <a href="/dashboard/lamaran/{{$lowongan->slug}}" class="btn btn-warning" title="Daftar pelamar"><i class="bi bi-bag-fill"></i></a>
                                 </td>
                             </tr>
                             @endforeach

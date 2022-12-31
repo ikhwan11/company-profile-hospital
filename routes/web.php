@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\User_Controller;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\LamaranController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\BlogGuestController;
@@ -40,6 +41,7 @@ Route::get('/services/detail/{layanan}', [MainController::class, 'layananDetail'
 // karir guest
 Route::get('/karir', [MainController::class, 'karirIndex'])->middleware('guest');
 Route::get('/karir/{lowongan}', [MainController::class, 'karirShow'])->middleware('guest');
+Route::post('/karir', [MainController::class, 'store'])->middleware('guest');
 
 
 // <-- Bagian Admin -->
@@ -78,6 +80,8 @@ Route::resource('/dashboard/jadwal', jadwalDokterController::class)->middleware(
 
 // lowongan
 Route::resource('/dashboard/lowongan', LowonganController::class)->middleware('auth');
+Route::get('/dashboard/lamaran/download', [LamaranController::class, 'download'])->middleware('auth');
+Route::resource('/dashboard/lamaran/{lowongan}', LamaranController::class)->middleware('auth');
 
 // layanan
 Route::resource('/dashboard/layanan', LayananController::class)->middleware('auth');
