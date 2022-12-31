@@ -426,13 +426,13 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="latest-post">
                     <div class="latest-post-media">
-                        <a href="/blogGuest/{{$post->slug}}" class="latest-post-img">
+                        <a href="/artikel/{{$post->slug}}" class="latest-post-img">
                             <img loading="lazy" class="img-fluid" src="{{asset('storage/'.$post->image)}}" alt="img">
                         </a>
                     </div>
                     <div class="post-body">
                         <h4 class="post-title">
-                            <a href="/blogGuest/{{$post->slug}}" class="d-inline-block">{{ $post->title }}</a>
+                            <a href="/artikel/{{$post->slug}}" class="d-inline-block">{{ $post->title }}</a>
                         </h4>
                         <div class="latest-post-meta">
                             <span class="post-item-date">
@@ -446,7 +446,7 @@
         </div>
 
         <div class="general-btn text-center mt-4">
-            <a class="btn btn-primary" href="/blogGuest">See All Posts</a>
+            <a class="btn btn-primary" href="/artikel">See All Posts</a>
         </div>
 
     </div>

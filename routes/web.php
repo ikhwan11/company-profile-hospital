@@ -10,6 +10,7 @@ use App\Http\Controllers\User_Controller;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\BlogGuestController;
 use App\Http\Controllers\PoliklinikController;
 use App\Http\Controllers\jadwalDokterController;
@@ -35,6 +36,10 @@ Route::get('/dokter/profil/{dokter}', [MainController::class, 'profilDokterDetai
 // layanan guest
 Route::get('/services', [MainController::class, 'layananIndex'])->middleware('guest');
 Route::get('/services/detail/{layanan}', [MainController::class, 'layananDetail'])->middleware('guest');
+
+// karir guest
+Route::get('/karir', [MainController::class, 'karirIndex'])->middleware('guest');
+Route::get('/karir/{lowongan}', [MainController::class, 'karirShow'])->middleware('guest');
 
 
 // <-- Bagian Admin -->
@@ -70,6 +75,9 @@ Route::resource('/dashboard/poliklinik', PoliklinikController::class)->middlewar
 
 // jadwal dokter
 Route::resource('/dashboard/jadwal', jadwalDokterController::class)->middleware('auth');
+
+// lowongan
+Route::resource('/dashboard/lowongan', LowonganController::class)->middleware('auth');
 
 // layanan
 Route::resource('/dashboard/layanan', LayananController::class)->middleware('auth');

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Banner;
 use App\Models\Dokter;
 use App\Models\Layanan;
+use App\Models\Lowongan;
 use App\Models\Poliklinik;
 use App\Models\PostCategory;
 use Illuminate\Database\Seeder;
@@ -115,6 +116,24 @@ class DatabaseSeeder extends Seeder
             'nama_layanan' => 'IGD',
             'slug' => 'igd',
             'ket' => '<div>Unit Gawat Darurat di Rumah Sakit Graha Hermine dilengkapi dengan:</div><ul><li> 5 (lima) tempat tidur, </li><li>dan 1 (satu) ruang Isolasi di IGD, </li><li>garis Triase, Troli emergency, </li><li>Infantwarmer, </li><li>Monitor, </li><li>Meja Konsultasi dokter dan </li><li>alat-alat emergency lainnya yang mendukung pelayanan untuk penanganan awal di Rumah Sakit Graha Hermine.</li></ul>',
+        ]);
+
+        Lowongan::create([
+            'posisi' => 'Dokter Umun',
+            'slug' => 'dokter-umun',
+            'persyaratan' => '<div><strong>Tanggung jawab:</strong></div><div>Memberikan pelayanan promotif</div><ul><li>Memberikan edukasi melalui buletin, health talk,dll</li><li>Melakukan pendekatan kpd karyawan utk edukasi</li></ul><div>Memberikan pelayanan preventif</div><ul><li>Melakukan Helth Risk Assessment kpd karyawan</li><li>Melakukan inspeksi thd perangkat medis</li><li>Memberikan pelatihan medis kpd karyawan &amp; warga sekitar</li></ul><div>Memberikan pelayanan kuratif</div><ul><li>Melakukan pemeriksaan dan pengobatan kpd karyawan</li><li>Standby jika ada kasus emergency</li><li>Melakukan assessment dan tindakan awal jika ada kasus emergency</li></ul><div>Memberikan pelayanan rehabilitatif</div><ul><li>Melakukan follow up thd karyawan, terutama dgn kondisi dan riwayat tertentu</li></ul><div>Membuat laporan &amp; analisa kegiatan</div><ul><li>Membuat laporan MCU</li><li>Membuat analisa dan laporan kunjungan pasien</li><li>Membuat analisa dan laporan kasus yg ditangani klinik</li></ul><div><strong>Persyaratan:</strong></div><ol><li>Dokter umum, STR valid</li><li>Memiliki pengalaman kerja min. 1 thn</li><li>Memiliki pengetahuan mengenai Hiperkes, ACLS/ATLS</li></ol>',
+
+            'excerpt' => 'Kami saat ini membutuhkan seorang tenaga medis yang cekatan, ulet, dan disiplin',
+            'periode_akhir' => '2023-01-06'
+        ]);
+
+        Lowongan::create([
+            'posisi' => 'IT Manager',
+            'slug' => 'it-manager',
+            'persyaratan' => '<div>Keuntungan</div><ul><li>Career</li><li>Bonus</li><li>Insurance</li></ul><div>Deskripsi Pekerjaan</div><div>Develop systems, applications &amp; infrastructure to support business &amp; Provide advice and recommendations related to IT implementation in business processes</div><div><strong>REQUIREMENTS:</strong></div><ul><li> Age 35 - 38</li><li> Bachelor Degree in Computer science or related field</li><li>Minimum 3 year of experience as IT Manager</li><li>Has working experience in IT Project Management, Application and Database design</li><li>Database programming MY SQL, MongoDB, Apache, Nginx, NextJS, Tailwind,CSS, Native, Laravel, NodeJS, Express JS, Rest API, Web service, JWT, OAUTH, GIT, Go Lang</li><li>Able to effectively manage multiple software development projects</li><li>Able to communicate effectively with other departments to manage the project</li><li>Must have creative, conceptual thinking &amp; good teamwork</li><li> Able to join a soon as possible</li><li><strong>Office Hour : Monday - Saturday</strong></li><li><strong>Placement : Arjuna - Kebon Jeruk - Jakarta Barat (Wisma iwi)</strong></li></ul><div><strong>RESPONSIBILITIES:</strong></div><ul><li>Responsible for the development and implementation of solution roadmaps and to ensure successful introductions across the organization and with customers e.g.Mobile Apps, Web Design development , IT programmer (Back end and front end)</li><li>Lead all members to ensure IT hardware, software and IT services run properly to support daily business operation</li><li>Trouble shooting for Network, Wi-Fi, Windows, Email, Printer, PC, TV Conference, ERP and special purpose IT systems, operation for infrastructure (LAN design, security design, server setting, etc.)</li><li>In charge for implementing and analyzing complex systems for the organization, which includes planning, development, testing, and deployment processes for various departments, while periodically reports the progress to top management</li><li>Responsible for analyzing, designing, developing, and documenting software development project</li></ul>',
+
+            'excerpt' => 'Kami saat ini membutuhkan IT manager yang bepengalaman, disiplin SOP, dan ulet dalam menyelesaikan pekerjaan',
+            'periode_akhir' => '2023-01-04'
         ]);
     }
 }

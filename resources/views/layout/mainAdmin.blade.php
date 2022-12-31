@@ -158,6 +158,12 @@
                     <span>Kelola layanan</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ ($tittle === "Lowongan") ? '' : 'collapsed'}}" href="/dashboard/lowongan">
+                    <i class="bi bi-bag-fill"></i>
+                    <span>Kelola Lowongan</span>
+                </a>
+            </li>
         </ul>
 
     </aside><!-- End Sidebar-->

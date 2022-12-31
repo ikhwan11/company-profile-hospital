@@ -126,7 +126,7 @@
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Galeri</a></li>
-                                                <li><a href="#">Karir</a></li>
+                                                <li><a href="/karir">Karir</a></li>
                                                 <li><a href="#">Hubungi Kami</a></li>
                                             </ul>
                                         </li>

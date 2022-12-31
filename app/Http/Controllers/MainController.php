@@ -9,6 +9,7 @@ use App\Models\Dokter;
 use App\Models\Layanan;
 use App\Models\LayananImage;
 use App\Models\JadwalDokter;
+use App\Models\Lowongan;
 
 class MainController extends Controller
 {
@@ -77,6 +78,16 @@ class MainController extends Controller
             'tittle' => 'Layanan',
             'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
             'layanan' => $layanan
+        ]);
+    }
+
+    // bagian karir
+
+    public function karirIndex()
+    {
+        return view('karir/karirGuest', [
+            'tittle' => 'Karir',
+            'lowongan' => Lowongan::latest()->filter(request(['search']))->paginate(10)->withQueryString()
         ]);
     }
 }
