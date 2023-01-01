@@ -17,6 +17,14 @@ class LamaranController extends Controller
         ]);
     }
 
+    public function show(Lamaran $lamaran)
+    {
+        return view('adminView/lowonganPelamarDetail', [
+            'tittle' => 'Lowongan',
+            'lamaran' => $lamaran
+        ]);
+    }
+
     public function destroy(Lamaran $lamaran)
     {
         if ($lamaran->cv) {
@@ -26,10 +34,5 @@ class LamaranController extends Controller
         Lamaran::destroy($lamaran->id);
 
         return redirect('/dashboard/lowongan')->with('pesan', 'Data pelamar berhasil di hapus');
-    }
-
-    public function download(Lamaran $lamaran)
-    {
-        return response()->download(storage_path("storage\{$lamaran->cv}"));
     }
 }

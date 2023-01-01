@@ -33,14 +33,14 @@
                     <td>{{$data->email}}</td>
                     <td>{{$data->created_at}}</td>
                     <td>
-                        <a href="" class="btn btn-primary" title="Detail"><i class="bi bi-eye"></i></a>
-                        <a href="/dashboard/lamaran/download" class="btn btn-warning" title="Download CV"><i class="bi bi-download"></i></a>
+                        <a href="/dashboard/lamaran/{{$data->id}}" class="btn btn-primary" title="Detail"><i class="bi bi-eye"></i></a>
+                        <a href="/storage/{{$data->cv}}"><button class="btn btn-warning" title="Download CV"><i class="bi bi-download"></i></button> </a>
 
-                        <!-- <form action="/dashboard/lamaran/{{$data->id}}" method="POST" class="d-inline">
+                        <form action="/dashboard/lamaran/{{$data->id}}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="btn btn-danger" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="bi bi-trash"></i></button>
-                        </form> -->
+                        </form>
                     </td>
                 </tr>
                 @endforeach

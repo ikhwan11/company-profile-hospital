@@ -80,10 +80,10 @@ Route::resource('/dashboard/jadwal', jadwalDokterController::class)->middleware(
 
 // lowongan
 Route::resource('/dashboard/lowongan', LowonganController::class)->middleware('auth');
-Route::get('/dashboard/lamaran/download', [LamaranController::class, 'download'])->middleware('auth');
-Route::resource('/dashboard/lamaran/{lowongan}', LamaranController::class)->middleware('auth');
+Route::get('/dashboard/lamaran/{lowongan}', [LamaranController::class, 'index'])->middleware('auth');
+Route::resource('/dashboard/lamaran', LamaranController::class)->middleware('auth');
 
 // layanan
 Route::resource('/dashboard/layanan', LayananController::class)->middleware('auth');
 Route::resource('/dashboard/layananImage', LayananImageController::class)->middleware('auth');
-Route::resource('/dashboard/layanan/detail/{layanan}', LayananDetailController::class)->middleware('auth');
+Route::get('/dashboard/layanan/detail/{layanan}', [LayananDetailController::class, 'index'])->middleware('auth');

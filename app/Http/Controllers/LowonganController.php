@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lowongan;
+use App\Models\Lamaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
