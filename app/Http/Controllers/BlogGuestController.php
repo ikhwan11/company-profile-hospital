@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\PostCategory;
+use App\Models\Layanan;
 
 class BlogGuestController extends Controller
 {
@@ -12,7 +13,8 @@ class BlogGuestController extends Controller
     {
         return view('blog/blogGuest', [
             'categories' => PostCategory::all(),
-            'posts' => Blog::latest()->filter(request(['search', 'category']))->paginate(3)->withQueryString()
+            'posts' => Blog::latest()->filter(request(['search', 'category']))->paginate(3)->withQueryString(),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -20,7 +22,8 @@ class BlogGuestController extends Controller
     {
         return view('blog/blogGuestSingle', [
             'data' => $blog,
-            'recents' => Blog::latest()->paginate(10)
+            'recents' => Blog::latest()->paginate(10),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 }

@@ -21,14 +21,16 @@ class MainController extends Controller
             'tittle' => 'Beranda',
             'posts' => Blog::latest()->paginate(3),
             'banners' => Banner::all(),
-            'galeris' => Galeri::paginate(6)
+            'galeris' => Galeri::paginate(6),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
     public function tentang()
     {
         return view('/tentang', [
-            'tittle' => 'Tentang Kami'
+            'tittle' => 'Tentang Kami',
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -36,7 +38,8 @@ class MainController extends Controller
     {
         return view('dokter/profilDokter', [
             'tittle' => "Profil Dokter",
-            'datas' => Dokter::paginate(6)
+            'datas' => Dokter::paginate(6),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -46,7 +49,8 @@ class MainController extends Controller
             'tittle' => 'Jadwal Dokter',
             'dokters' => Dokter::all(),
             'dokterCari' => Dokter::filter(request(['search']))->paginate(10)->withQueryString(),
-            'jadwal' => JadwalDokter::all()
+            'jadwal' => JadwalDokter::all(),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -61,7 +65,8 @@ class MainController extends Controller
             'jumat' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Jumat')->first(),
             'sabtu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Sabtu')->first(),
             'minggu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Minggu')->first(),
-            'data' => $dokter
+            'data' => $dokter,
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -71,7 +76,8 @@ class MainController extends Controller
     {
         return view('layanan/layananData', [
             'tittle' => 'Layanan',
-            'layanans' => Layanan::all()
+            'layanans' => Layanan::all(),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -80,7 +86,8 @@ class MainController extends Controller
         return view('layanan/layananDetail', [
             'tittle' => 'Layanan',
             'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
-            'layanan' => $layanan
+            'layanan' => $layanan,
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -90,7 +97,8 @@ class MainController extends Controller
     {
         return view('karir/karirGuest', [
             'tittle' => 'Karir',
-            'lowongan' => Lowongan::latest()->filter(request(['search']))->paginate(10)->withQueryString()
+            'lowongan' => Lowongan::latest()->filter(request(['search']))->paginate(10)->withQueryString(),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -98,7 +106,8 @@ class MainController extends Controller
     {
         return view('karir/karirGuestDetail', [
             'tittle' => 'Karir',
-            'lowongan' => $lowongan
+            'lowongan' => $lowongan,
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 
@@ -128,7 +137,8 @@ class MainController extends Controller
     {
         return view('galeri/galeriGuest', [
             'tittle' => 'Galeri',
-            'galeris' => Galeri::all()
+            'galeris' => Galeri::all(),
+            'lyn' => Layanan::paginate(5)
         ]);
     }
 }

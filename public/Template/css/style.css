@@ -1216,19 +1216,19 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 ================================================== */
 /*-- Main slide --*/
 .banner-carousel .banner-carousel-item {
-  height: 700px;
+  height: 550px;
   color: #fff;
   background-position: 50% 50%;
   background-size: cover;
 }
 @media (max-width: 991px) {
   .banner-carousel .banner-carousel-item {
-    height: 550px;
+    height:450px;
   }
 }
 @media (max-width: 575px) {
   .banner-carousel .banner-carousel-item {
-    height: 450px;
+    height: 350px;
   }
 }
 
@@ -2357,7 +2357,7 @@ img.testimonial-thumb {
 ================================================== */
 /*- Footer common */
 .footer {
-  background-color: #F6EB14;
+  background: linear-gradient(#087965, #0C5548);
 }
 
 .footer-main {
@@ -2372,7 +2372,7 @@ img.testimonial-thumb {
   padding-left: 15px;
   text-transform: uppercase;
   color: #fff;
-  border-left: 3px solid #303B97;
+  border-left: 3px solid #fff;
 }
 
 /* Footer about us */
