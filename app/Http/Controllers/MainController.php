@@ -11,6 +11,7 @@ use App\Models\LayananImage;
 use App\Models\JadwalDokter;
 use App\Models\Lamaran;
 use App\Models\Lowongan;
+use App\Models\Galeri;
 
 class MainController extends Controller
 {
@@ -19,7 +20,8 @@ class MainController extends Controller
         return view('/beranda', [
             'tittle' => 'Beranda',
             'posts' => Blog::latest()->paginate(3),
-            'banners' => Banner::all()
+            'banners' => Banner::all(),
+            'galeris' => Galeri::paginate(6)
         ]);
     }
 
@@ -109,7 +111,7 @@ class MainController extends Controller
             'no_hp' => 'required|max:255',
             'email' => 'required|email',
             'alamat' => 'required',
-            'tentang_pelamar' => 'required',
+            'tentang_pelamar' => 'required|max:500',
             'cv' => 'required|file|max:2048|mimes:pdf',
         ]);
 
@@ -120,5 +122,13 @@ class MainController extends Controller
         Lamaran::create($validatedData);
 
         return redirect('/karir')->with('pesan', 'Lamaran Berhasil di Apply');
+    }
+
+    public function galeriIndex()
+    {
+        return view('galeri/galeriGuest', [
+            'tittle' => 'Galeri',
+            'galeris' => Galeri::all()
+        ]);
     }
 }

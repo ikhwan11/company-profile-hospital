@@ -33,7 +33,29 @@
                     <td>{{$data->email}}</td>
                     <td>{{$data->created_at}}</td>
                     <td>
-                        <a href="/dashboard/lamaran/{{$data->id}}" class="btn btn-primary" title="Detail"><i class="bi bi-eye"></i></a>
+                        <button type="button" class="btn btn-primary" title="Tentang Pelamar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <!-- modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">{{ $data->nama_pelamar }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ $data->tentang_pelamar }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- endmodal -->
+
                         <a href="/storage/{{$data->cv}}"><button class="btn btn-warning" title="Download CV"><i class="bi bi-download"></i></button> </a>
 
                         <form action="/dashboard/lamaran/{{$data->id}}" method="POST" class="d-inline">

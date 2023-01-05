@@ -141,8 +141,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Kelola Gallery</span>
+                        <a href="/dashboard/galeri">
+                            <i class="bi bi-circle"></i><span>Kelola Galeri</span>
                         </a>
                     </li>
                     <li>

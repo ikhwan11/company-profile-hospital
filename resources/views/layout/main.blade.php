@@ -36,6 +36,7 @@
     <!-- Template styles-->
     <link rel="stylesheet" href="{{asset('Template')}}/css/style.css">
 
+
 </head>
 
 <body>
@@ -46,8 +47,8 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <ul class="top-info text-center text-md-left">
-                            <li><i class="fas fa-phone"></i>
-                                <p class="info-text">Emergency (0778) 363 127</p>
+                            <li><i class="fas fa-phone text-white"></i>
+                                <p class="info-text text-white">Emergency (0778) 363 127</p>
                             </li>
                         </ul>
                     </div>
@@ -57,13 +58,13 @@
                         <ul class="list-unstyled">
                             <li>
                                 <a title="Facebook" href="#">
-                                    <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="social-icon"><i class="fab fa-facebook-f text-white"></i></span>
                                 </a>
                                 <a title="Instagram" href="#">
-                                    <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                                    <span class="social-icon"><i class="fab fa-instagram text-white"></i></span>
                                 </a>
                                 <a title="YouTube" href="#">
-                                    <span class="social-icon"><i class="fab fa-youtube"></i></span>
+                                    <span class="social-icon"><i class="fab fa-youtube text-white"></i></span>
                                 </a>
                             </li>
                         </ul>
@@ -125,7 +126,7 @@
                                         <li class="nav-item dropdown">
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Galeri</a></li>
+                                                <li><a href="/galeri">Galeri</a></li>
                                                 <li><a href="/karir">Karir</a></li>
                                                 <li><a href="#">Hubungi Kami</a></li>
                                             </ul>
@@ -151,27 +152,27 @@
 
         @yield('content')
 
-        <footer id="footer" class="footer bg-overlay">
+        <footer id="footer" class="footer">
             <div class="footer-main">
                 <div class="container">
                     <div class="row justify-content-between">
                         <div class="col-lg-4 col-md-6 footer-widget footer-about">
-                            <h3 class="widget-title">Tentang Kami</h3>
+                            <h3 class="widget-title text-dark">Tentang Kami</h3>
                             <img loading="lazy" width="200px" class="footer-logo" src="Template/images/logo-gh-test.png" alt="Constra">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
                                 labore et dolore magna aliqua.</p>
                             <div class="footer-social">
                                 <ul>
-                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f text-dark"></i></a></li>
+                                    <li><a href="#" aria-label="Youtube"><i class="fab fa-youtube text-dark"></i></a>
                                     </li>
-                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram text-dark"></i></a></li>
                                 </ul>
                             </div><!-- Footer social end -->
                         </div><!-- Col end -->
 
                         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                            <h3 class="widget-title">Jadwal </h3>
+                            <h3 class="widget-title text-dark">Jadwal </h3>
                             <div class="working-hours">
                                 We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
                                 Hotline and Contact form.
@@ -182,7 +183,7 @@
                         </div><!-- Col end -->
 
                         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                            <h3 class="widget-title">Services</h3>
+                            <h3 class="widget-title text-dark">Services</h3>
                             <ul class="list-arrow">
                                 <li><a href="service-single.html">Pre-Construction</a></li>
                                 <li><a href="service-single.html">General Contracting</a></li>

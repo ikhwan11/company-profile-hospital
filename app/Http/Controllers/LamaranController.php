@@ -17,13 +17,6 @@ class LamaranController extends Controller
         ]);
     }
 
-    public function show(Lamaran $lamaran)
-    {
-        return view('adminView/lowonganPelamarDetail', [
-            'tittle' => 'Lowongan',
-            'lamaran' => $lamaran
-        ]);
-    }
 
     public function destroy(Lamaran $lamaran)
     {

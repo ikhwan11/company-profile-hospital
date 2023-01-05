@@ -117,14 +117,16 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Sekilas tentang Anda</label>
+                                <label>Mengapa kami pilih Anda</label>
                                 <textarea class="form-control @error('tentang_pelamar') is-invalid @enderror" name="tentang_pelamar" id="tentang_pelamar" rows="5">{{{ old('tentang_pelamar') }}}</textarea>
+                                <small class="text-muted" id="count-result">0/500</small>
                                 @error('tentang_pelamar')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Upload CV*</label>
                                 <input class="form-control @error('cv') is-invalid @enderror" name="cv" id="cv" placeholder="" type="file" multiple>
@@ -145,5 +147,13 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
     </div>
 
 </section>
+
+<script>
+    let myText = document.getElementById("tentang_pelamar");
+    myText.addEventListener("input", () => {
+        let count = (myText.value).length;
+        document.getElementById("count-result").textContent = `${count}/500`;
+    });
+</script>
 
 @endsection
