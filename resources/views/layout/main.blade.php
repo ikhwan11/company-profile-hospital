@@ -44,108 +44,79 @@
 
 <body>
     <div class="body-inner">
-
-        <div id="top-bar" class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                        <ul class="top-info text-center text-md-left">
-                            <li><i class="fas fa-phone text-white"></i>
-                                <p class="info-text text-white">Emergency (0778) 363 127</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--/ Top info end -->
-
-                    <!-- <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a title="Facebook" href="#">
-                                    <span class="social-icon"><i class="fab fa-facebook-f text-white"></i></span>
-                                </a>
-                                <a title="Instagram" href="#">
-                                    <span class="social-icon"><i class="fab fa-instagram text-white"></i></span>
-                                </a>
-                                <a title="YouTube" href="#">
-                                    <span class="social-icon"><i class="fab fa-youtube text-white"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> -->
-                    <!--/ Top social end -->
-                </div>
-                <!--/ Content row end -->
-            </div>
-            <!--/ Container end -->
-        </div>
-        <!--/ Topbar end -->
         <!-- Header start -->
         <header id="header" class="header-two">
             <div class="site-navigation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <nav class="navbar navbar-expand-lg navbar-light p-0">
-
-                                <div class="logo">
-                                    <a class="d-block" href="/">
-                                        <img loading="lazy" src="{{asset('Template')}}/images/logo-gh-test.png" alt="Constra">
-                                    </a>
-                                </div><!-- logo end -->
-
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-
-                                <div id="navbar-collapse" class="collapse navbar-collapse">
-                                    <ul class="nav navbar-nav ml-auto align-items-center">
-
-                                        <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
-
-                                        <li class="nav-item"><a class="nav-link" href="/tentang">Tentang kami</a></li>
-
-                                        <li class="nav-item dropdown">
-                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter Kami<i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="/dokter/profil">Profil Dokter</a></li>
-                                                <li><a href="/dokter/jadwal">Jadwal Dokter</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a class="nav-link" href="/services">Layanan Kami</a></li>
-                                        <!-- <li class="nav-item dropdown">
-                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Layanan <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Poliklinik</a></li>
-                                                <li><a href="#">Instalasi Gawat Darurat(IGD)</a></li>
-                                                <li><a href="#">Layanan Rawat Inap</a></li>
-                                                <li><a href="#">Layanan Ibu dan Anak</a></li>
-                                                <li><a href="#">Layanan Unggulan</a></li>
-                                            </ul>
-                                        </li> -->
-
-                                        <li class="nav-item"><a class="nav-link" href="/artikel">Artikel</a></li>
-
-                                        <li class="nav-item dropdown">
-                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="/galeri">Galeri</a></li>
-                                                <li><a href="/karir">Karir</a></li>
-                                                <li><a href="#">Hubungi Kami</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="header-get-a-quote">
-                                            <a class="btn btn-primary" href="/login">Sign In</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
+                <div class="col-lg-12 top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12">
+                                <ul class="top-info text-center text-md-left mt-2">
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=6282386828066" class="info-text">
+                                            <h6 class="text-white">Pendaftaran Online</h6>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+                                <ul class="mt-2">
+                                    <li>
+                                        <p class="text-white"><i class="fas fa-phone"></i> Emergency | <strong>(0778) 363 127</strong> </p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <!--/ Col end -->
                     </div>
-                    <!--/ Row end -->
                 </div>
+                <div class="row mr-4 ml-4">
+
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light p-0">
+
+                            <div class="logo">
+                                <a class="d-block" href="/">
+                                    <img loading="lazy" src="{{asset('Template')}}/images/logo-gh-test.png" alt="Constra">
+                                </a>
+                            </div><!-- logo end -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div id="navbar-collapse" class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav ml-auto align-items-center">
+
+                                    <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
+
+                                    <li class="nav-item"><a class="nav-link" href="/tentang">Tentang kami</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/dokter/jadwal">Jadwal Dokter</a></li>
+
+                                    <li class="nav-item"><a class="nav-link" href="/services">Layanan Kami</a></li>
+
+                                    <li class="nav-item"><a class="nav-link" href="/artikel">Artikel</a></li>
+
+                                    <li class="nav-item dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="/dokter/profil">Profil Dokter</a></li>
+                                            <li><a href="/galeri">Galeri</a></li>
+                                            <li><a href="/karir">Karir</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-item"><a class="nav-link" href="https://bit.ly/surveikepuasanpasienRSGH">Survei Kepuasan</a></li>
+
+                                    <li class="header-get-a-quote">
+                                        <a class="btn btn-primary" href="/login">Sign In</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <!--/ Col end -->
+                </div>
+                <!--/ Row end -->
                 <!--/ Container end -->
 
             </div>
@@ -222,7 +193,7 @@
                             <div class="copyright-info text-white text-center">
                                 <span>Copyright &copy; <script>
                                         document.write(new Date().getFullYear())
-                                    </script>, Designed by <a href="https://themefisher.com">Themefisher &amp; Developed by <a href="https://github.com/ikhwan11">Ikhwan</a></span>
+                                    </script>, RS Graha Hermine Batam</span>
                             </div>
                         </div>
                     </div><!-- Row end -->

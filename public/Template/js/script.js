@@ -16,24 +16,12 @@ jQuery(function ($) {
 		// fixedHeader on scroll
 		function fixedHeader() {
 			var headerTopBar = $('.top-bar').outerHeight();
-			var headerOneTopSpace = $('.header-one .logo-area').outerHeight();
+			var headerNav = $('.header-two .site-navigation');
 
-			var headerOneELement = $('.header-one .site-navigation');
-			var headerTwoELement = $('.header-two .site-navigation');
-
-			if ($(window).scrollTop() > headerTopBar + headerOneTopSpace) {
-				$(headerOneELement).addClass('navbar-fixed');
-				$('.header-one').css('margin-bottom', headerOneELement.outerHeight());
-			} else {
-				$(headerOneELement).removeClass('navbar-fixed');
-				$('.header-one').css('margin-bottom', 0);
-			}
+			
 			if ($(window).scrollTop() > headerTopBar) {
-				$(headerTwoELement).addClass('navbar-fixed');
-				$('.header-two').css('margin-bottom', headerTwoELement.outerHeight());
-			} else {
-				$(headerTwoELement).removeClass('navbar-fixed');
-				$('.header-two').css('margin-bottom', 0);
+				$(headerNav).addClass('navbar-fixed');
+				$('.header-two').css('margin-bottom', headerNav.outerHeight());
 			}
 		}
 		fixedHeader();

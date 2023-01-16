@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="banner-carousel banner-carousel-2 mb-0">
+<div class="banner-carousel banner-carousel-2">
     @foreach($banners as $banner)
     @php
     $bgImage = asset('Storage/'.$banner->image);

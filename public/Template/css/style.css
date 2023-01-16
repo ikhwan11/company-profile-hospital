@@ -703,7 +703,7 @@ ul.top-info li p.info-text {
 .header-two {
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-  padding: 15px 0;
+  padding: 0px 0;
 }
 .header-two .navbar-fixed {
   background-color: #fff;
@@ -867,7 +867,6 @@ ul.top-info-box > li.nav-search i {
   margin: 10px 0;
   padding: 6px;
   border-radius: 0;
-  font-size: 1rem;
   background: #303B97;
 }
 .navbar-toggler:focus {

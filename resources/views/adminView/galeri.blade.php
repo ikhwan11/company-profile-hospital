@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Data Dokter</h1>
+    <h1>Galeri</h1>
 
     <nav>
         <ol class="breadcrumb">
@@ -36,6 +36,7 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th scope="col">Gambar</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Tanggal di buat</th>
                                 <th scope="col">Aksi</th>
@@ -44,13 +45,14 @@
                         <tbody>
                             @foreach($galeri as $data)
                             <tr>
+                                <td><img src="{{ asset('storage/'.$data->image) }}" alt="" width="200"></td>
                                 <td>{{$data->title_galeri}}</td>
                                 <td>{{$data->created_at}}</td>
                                 <td>
 
-                                    <button type="button" class="btn btn-primary" title="Tentang Pelamar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <!-- <button type="button" class="btn btn-primary" title="Tentang Pelamar" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         <i class="bi bi-eye"></i>
-                                    </button>
+                                    </button> -->
 
                                     <!-- modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
