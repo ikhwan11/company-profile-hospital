@@ -56,7 +56,7 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
     </div>
 
     <div class="row">
-        <div class="col-lg-6 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
             <div class="latest-post">
                 <div class="latest-post-media">
                     <a href="#" class="latest-post-img">
@@ -65,16 +65,34 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                 </div>
                 <div class="post-body">
                     <h4 class="post-title">
-                        <a href="#" class="d-inline-block">POLIKLINIK</a>
+                        <a href="#" class="d-inline-block">LAYANAN POLIKLINIK</a>
                     </h4>
-                    <div class="latest-post-meta">
-                        <span class="post-item-date">July 20, 2017</span>
-                    </div>
+                    <span>kami menyediakan layanan poliklinik yang lengkap dengan ditangani oleh dokter spesialis yang ahli</span>
                 </div>
+                <a href="" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="latest-post">
+                <div class="latest-post-media">
+                    <a href="#" class="latest-post-img">
+                        <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/poliklinik.jpg" alt="img">
+                    </a>
+                </div>
+                <div class="post-body">
+                    <h4 class="post-title">
+                        <a href="#" class="d-inline-block">LAYANAN UNGGULAN</a>
+                    </h4>
+
+                    <span>kami memilki layanan unggulan yang dapat memenuhi kebutuhan pasien kami</span>
+
+                </div>
+                <a href="" class="btn btn-primary">Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
             <div class="latest-post">
                 <div class="latest-post-media">
                     <a href="#" class="latest-post-img">
@@ -83,12 +101,13 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                 </div>
                 <div class="post-body">
                     <h4 class="post-title">
-                        <a href="#" class="d-inline-block">IGD (Instalasi Gawat Darurat)</a>
+                        <a href="#" class="d-inline-block">FASILITAS LAYANAN</a>
                     </h4>
-                    <div class="latest-post-meta">
-                        <span class="post-item-date"> July 20, 2017</span>
-                    </div>
+
+                    <span>RS Graha Hermine menyediakan fasilitas layanan yang lengkap dan berstandar international</span>
+
                 </div>
+                <a href="" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
     </div>

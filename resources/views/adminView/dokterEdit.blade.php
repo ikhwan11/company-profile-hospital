@@ -7,8 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item">Media</li>
-            <li class="breadcrumb-item"><a href="/dashboard/dokter">Kelola Dokter</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard/dokter">Data Dokter</a></li>
             <li class="breadcrumb-item active">Edit data</li>
         </ol>
     </nav>

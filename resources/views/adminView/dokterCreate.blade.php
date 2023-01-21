@@ -7,8 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item">Media</li>
-            <li class="breadcrumb-item"><a href="/dashboard/dokter">Kelola Dokter</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard/dokter">Data Dokter</a></li>
             <li class="breadcrumb-item active">Tambah data</li>
         </ol>
     </nav>
@@ -39,8 +38,8 @@
             <div class="mb-3 col-md-6">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-select">
-                    <option value="L" selected>Laki-Laki</option>
-                    <option value="P">Perempuan</option>
+                    <option value="Laki-Laki" @if (old('jenis_kelamin')=='Laki-Laki' ) selected="selected" @endif>Laki-Laki</option>
+                    <option value="Perempuan" @if (old('jenis_kelamin')=='Perempuan' ) selected="selected" @endif>Perempuan</option>\
                 </select>
             </div>
             <div class="mb-3 col-md-6">
@@ -100,7 +99,7 @@
             </div>
 
             <div class="mb-3 col-md-6">
-                <label for="specialis" class="form-label">Sub-Specialist</label>
+                <label for="specialis" class="form-label">Sub Specialist</label>
                 <input type="specialis" class="form-control @error('specialis') is-invalid @enderror" name="specialis" id="specialis" value="{{old('specialis')}}" autofocus>
                 @error('specialis')
                 <div class="invalid-feedback">

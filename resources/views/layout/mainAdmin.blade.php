@@ -49,7 +49,7 @@
                 <span class="d-none d-lg-block">RS Graha hermine</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
+        </div>
 
 
         <nav class="header-nav ms-auto">
@@ -57,31 +57,23 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="{{asset('storage/'. auth()->user()->image)}}" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2">{{auth()->user()->nama}}</span>
-                    </a><!-- End Profile Iamge Icon -->
+                    </a>
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
                             <h6>{{auth()->user()->nama}}</h6>
+                            @if(auth()->user()->role == '1')
+                            <span>Adminstrator</span>
+                            @elseif(auth()->user()->role == '2')
                             <span>Social Media Admin</span>
+                            @else
+                            <span>Recruiter</span>
+                            @endif
                         </li>
 
-                        <!-- <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-person"></i>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
 
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li> -->
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -96,13 +88,13 @@
                             </form>
                         </li>
 
-                    </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
+                    </ul>
+                </li>
 
             </ul>
-        </nav><!-- End Icons Navigation -->
+        </nav>
 
-    </header><!-- End Header -->
+    </header>
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -131,10 +123,10 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav1" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-journal-text"></i><span>Media</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="forms-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="/dashboard/banner">
                             <i class="bi bi-circle"></i><span>Kelola Banner</span>
@@ -153,11 +145,33 @@
                 </ul>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-house-fill"></i><span>Layanan</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/dashboard/layanan-poliklinik">
+                            <i class="bi bi-circle"></i><span>Layanan Poliklinik</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Fasilitas Layanan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Layanan Unggulan</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link {{ ($tittle === "Layanan") ? '' : 'collapsed'}}" href="/dashboard/layanan">
                     <i class="bi bi-house-fill"></i>
                     <span>Kelola layanan</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link {{ ($tittle === "Lowongan") ? '' : 'collapsed'}}" href="/dashboard/lowongan">
                     <i class="bi bi-bag-fill"></i>

@@ -12,6 +12,6 @@ class LayananImage extends Model
 
     protected function layanan()
     {
-        return $this->belongsTo(Layanan::class);
+        return $this->belongsTo(Layanan_poliklinik::class);
     }
 }

@@ -7,7 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/dashboard/layanan">Layanan</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard/layanan-poliklinik">Layanan Poliklinik</a></li>
             <li class="breadcrumb-item active">Kelola gambar</li>
         </ol>
     </nav>
@@ -24,7 +24,7 @@
         <div class="card" style="width: 18rem;">
             <img src="{{asset('storage/'.$images->image)}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><small>Nama layanan:</small><br> {{ $images->layanan->nama_layanan }}</h5>
+                <h5 class="card-title"><small class="text-muted">Nama layanan:</small><br> {{ $images->layanan->poliklinik }}</h5>
                 <a href="/dashboard/layananImage/{{$images->id}}/edit" class="btn btn-primary d-inline" title="Edit Gambar"><i class="bi bi-pencil-square"></i></a>
                 <form action="/dashboard/layananImage/{{$images->id}}" method="POST" class="d-inline">
                     @method('delete')

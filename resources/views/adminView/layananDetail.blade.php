@@ -7,7 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/dashboard/layanan">Layanan</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard/layanan-poliklinik">Layanan Poliklinik</a></li>
             <li class="breadcrumb-item active">Detail Layanan</li>
         </ol>
     </nav>
@@ -15,7 +15,7 @@
 
 <section class="section">
     <div class="row align-items-top">
-        <h2>{{$layanan->nama_layanan}}</h2>
+        <h2>{{$layanan->poliklinik}}</h2>
 
         <div class="row">
             @foreach($images as $image)

@@ -8,7 +8,6 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item">Media</li>
             <li class="breadcrumb-item active">Data Dokter</li>
         </ol>
     </nav>
@@ -25,7 +24,7 @@
 
     <div class="col">
         <a href="/dashboard/dokter/create" class="btn btn-primary text-white">Tambah Data <i class="bi bi-arrow-right-short"></i></a>
-        <a href="/dashboard/jadwal/create" class="btn btn-dark text-white">Buat Jadwal Dokter<i class="bi bi-arrow-right-short"></i></a>
+        <!-- <a href="/dashboard/jadwal/create" class="btn btn-dark text-white">Buat Jadwal Dokter<i class="bi bi-arrow-right-short"></i></a> -->
 
     </div>
 
@@ -47,6 +46,7 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th scope="col">Image</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Jenis Kelamin</th>
                                 <th scope="col">No Hp</th>
@@ -56,12 +56,14 @@
                         </thead>
                         <tbody>
                             @foreach($dokters as $dokter)
-                            <tr>
+                            <tr class="align-middle">
+                                <td><img src="{{ asset('storage/'.$dokter->image) }}" alt="" width="100"></td>
                                 <td>{{$dokter->nama}}</td>
                                 <td>{{$dokter->jenis_kelamin}}</td>
                                 <td>{{$dokter->no_hp}}</td>
                                 <td>{{$dokter->email}}</td>
                                 <td>
+                                    <a href="/dashboard/dokter-jadwal/{{$dokter->slug}}" class="btn btn-dark" title="Tambah Jadwal"><i class="bi bi-calendar-plus"></i></a>
                                     <a href="/dashboard/dokter/{{$dokter->slug}}" class="btn btn-primary" title="Detail"><i class="bi bi-eye"></i></a>
                                     <a href="/dashboard/dokter/{{$dokter->slug}}/edit" class="btn btn-warning" title="Edit"><i class="bi bi-pencil-square"></i></a>
 

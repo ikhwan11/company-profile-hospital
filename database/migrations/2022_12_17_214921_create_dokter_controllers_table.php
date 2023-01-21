@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('slug')->unique();
+            $table->foreignId('poliklinik_id');
             $table->string('jenis_kelamin');
             $table->date('tanggal_lahir');
             $table->string('alamat_domisili');
             $table->string('no_hp');
             $table->string('email');
-            $table->foreignId('poliklinik_id');
             $table->string('specialis')->nullable();
             $table->text('riwayat');
             $table->string('image')->nullable();

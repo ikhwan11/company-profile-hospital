@@ -19,66 +19,23 @@
                             <table class="table table-striped table-responsive">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Senin</th>
-                                        <th scope="col">Selasa</th>
-                                        <th scope="col">Rabu</th>
-                                        <th scope="col">Kamis</th>
-                                        <th scope="col">Jumat</th>
-                                        <th scope="col">Sabtu</th>
-                                        <th scope="col">Minggu</th>
+                                        <th scope="col">Hari</th>
+                                        <th scope="col">Jam Praktek</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <tr>
-                                        @if(is_null($senin))
-                                        <td>-</td>
+                                        @if(is_null($jadwal))
+                                        <td>jadwal belum ditentukan</td>
                                         @else
-                                        <td>{{date("H:i", strtotime("$senin->dari"))}} - {{date("H:i", strtotime("$senin->sampai"))}}</td>
+                                        <td>{{$jadwal->hari}}</td>
                                         @endif
 
-                                        @if(is_null($selasa))
-                                        <td>-</td>
+                                        @if(is_null($jadwal))
+                                        <td>jadwal belum ditentukan</td>
                                         @else
-                                        <td>{{date("H:i", strtotime("$selasa->dari"))}} - {{date("H:i", strtotime("$selasa->sampai"))}}</td>
-                                        @endif
-
-                                        @if(is_null($rabu))
-                                        <td>-</td>
-                                        @else
-                                        <td>
-                                            {{date("H:i", strtotime("$rabu->dari"))}} - {{date("H:i", strtotime("$rabu->sampai"))}}
-                                        </td>
-                                        @endif
-
-                                        @if(is_null($kamis))
-                                        <td>-</td>
-                                        @else
-                                        <td>
-                                            {{date("H:i", strtotime("$kamis->dari"))}} - {{date("H:i", strtotime("$kamis->sampai"))}}
-                                        </td>
-                                        @endif
-
-                                        @if(is_null($jumat))
-                                        <td>-</td>
-                                        @else
-                                        <td>
-                                            {{date("H:i", strtotime("$jumat->dari"))}} - {{date("H:i", strtotime("$jumat->sampai"))}}
-                                        </td>
-                                        @endif
-
-                                        @if(is_null($sabtu))
-                                        <td>-</td>
-                                        @else
-                                        <td>
-                                            {{date("H:i", strtotime("$sabtu->dari"))}} - {{date("H:i", strtotime("$sabtu->sampai"))}}
-                                        </td>
-                                        @endif
-
-                                        @if(is_null($minggu))
-                                        <td>-</td>
-                                        @else
-                                        <td>{{date("H:i", strtotime("$minggu->dari"))}} - {{date("H:i", strtotime("$minggu->sampai"))}}</td>
+                                        <td>{{date("H:i", strtotime("$jadwal->dari"))}} - {{date("H:i", strtotime("$jadwal->sampai"))}}</td>
                                         @endif
                                     </tr>
                                 </tbody>

@@ -15,6 +15,10 @@ class JadwalDokter extends Model
     {
         return $this->belongsTo(Dokter::class);
     }
+    protected function poliklinik()
+    {
+        return $this->belongsTo(Layanan_poliklinik::class);
+    }
 
     public function scopeFilter($query, array $filters)
     {

@@ -35,16 +35,23 @@ class User_Controller extends Controller
         $validatedData = $request->validate(
             [
                 'nama' => 'required|max:255',
+                'role' => 'required',
+                'email' => 'required',
                 'username' => 'required|max:255|unique:users',
-                'password' => 'required|min:6|max:255'
+                'password' => 'required|min:6|max:255',
+                'image' => 'image|file|max:1024'
             ]
         );
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('user-images');
+        }
 
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         user::create($validatedData);
 
-        Session::flash('pesan', 'User baru berhasil ditambahkan');
+        Session::flash('pesan', 'User berhasil ditambah');
 
         return redirect('/dashboard/user');
     }
@@ -61,8 +68,6 @@ class User_Controller extends Controller
     {
         $validatedData = $request->validate(
             [
-                'nama' => 'required|max:255',
-                'username' => 'required|max:255|unique:users',
                 'password' => 'required|min:6|max:255'
             ]
         );

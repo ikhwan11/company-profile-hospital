@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dokter;
 use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
-use App\Models\Poliklinik;
+use App\Models\Layanan_poliklinik;
 use Illuminate\Support\Facades\Storage;
 
 class DokterController extends Controller
@@ -25,7 +25,7 @@ class DokterController extends Controller
     {
         return view('adminView/dokterCreate', [
             'tittle' => 'Dokter',
-            'poliklinik' => Poliklinik::all()
+            'poliklinik' => Layanan_poliklinik::all()
         ]);
     }
 
@@ -60,13 +60,7 @@ class DokterController extends Controller
 
         return view('adminView/dokterDetail', [
             'tittle' => 'Dokter',
-            'senin' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Senin')->first(),
-            'selasa' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Selasa')->first(),
-            'rabu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Rabu')->first(),
-            'kamis' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Kamis')->first(),
-            'jumat' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Jumat')->first(),
-            'sabtu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Sabtu')->first(),
-            'minggu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Minggu')->first(),
+            'jadwal' => JadwalDokter::where('dokter_id', $dokter->id)->first(),
             'dokter' => $dokter
         ]);
     }
@@ -77,7 +71,7 @@ class DokterController extends Controller
         return view('adminView/dokterEdit', [
             'tittle' => 'Dokter',
             'dokter' => $dokter,
-            'poliklinik' => Poliklinik::all()
+            'poliklinik' => Layanan_poliklinik::all()
         ]);
     }
 

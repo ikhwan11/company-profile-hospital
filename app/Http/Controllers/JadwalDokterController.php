@@ -2,82 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JadwalDokter;
 use App\Models\Dokter;
+use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
 
 class JadwalDokterController extends Controller
 {
 
-    public function index()
-    {
-        return View('adminView/jadwalDokterData', [
-            'tittle' => 'Dokter',
-            'dokters' => Dokter::all(),
-            'jadwal' => JadwalDokter::filter(request(['search']))->paginate(7)->withQueryString()
-        ]);
-    }
-
-    public function create()
+    public function index(Dokter $dokter)
     {
         return View('adminView/jadwalDokterCreate', [
             'tittle' => 'Dokter',
-            'dokters' => Dokter::all()
+            'dokter' => $dokter,
         ]);
     }
-
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
             'dokter_id' => 'required',
-            'hari' => 'required',
+            'poliklinik_id' => 'required',
+            'hari' => 'required|max:255',
             'dari' => 'required',
-            'sampai' => 'required',
+            'sampai' => 'required'
         ]);
 
         JadwalDokter::create($validatedData);
 
-        return redirect('/dashboard/dokter')->with('pesan', 'jadwal dokter berhasil dibuat');
-    }
-
-    public function show(JadwalDokter $jadwalDokter)
-    {
+        return redirect('/dashboard/dokter')->with('pesan', 'jadwal dokter berhasil ditambah');
     }
 
     public function edit($id)
     {
-        $jadwalDokter = JadwalDokter::find($id);
-        return View('adminView/jadwalDokterEdit', [
+        return view('adminView/jadwalDokterEdit', [
             'tittle' => 'Dokter',
-            'data' => $jadwalDokter
+            'jadwal' => JadwalDokter::where('dokter_id', $id)->first(),
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        $jadwalDokter = JadwalDokter::find($id);
         $validatedData = $request->validate([
             'dokter_id' => 'required',
-            'hari' => 'required',
+            'poliklinik_id' => 'required',
+            'hari' => 'required|max:255',
             'dari' => 'required',
-            'sampai' => 'required',
+            'sampai' => 'required'
         ]);
 
-        JadwalDokter::where('id', $jadwalDokter->id)
+        JadwalDokter::where('id', $id)
             ->update($validatedData);
 
         return redirect('/dashboard/dokter')->with('pesan', 'jadwal dokter berhasil diupdate');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\JadwalDokter  $jadwalDokter
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(JadwalDokter $jadwalDokter)
-    {
-        //
     }
 }

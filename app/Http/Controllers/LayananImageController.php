@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LayananImage;
-use App\Models\Layanan;
+use App\Models\Layanan_poliklinik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,7 +36,7 @@ class LayananImageController extends Controller
 
         LayananImage::create($validatedData);
 
-        return redirect('/dashboard/layanan')->with('pesan', 'gambar layanan berhasil ditambah');
+        return redirect('/dashboard/layanan-poliklinik')->with('pesan', 'gambar layanan berhasil ditambah');
     }
 
     /**

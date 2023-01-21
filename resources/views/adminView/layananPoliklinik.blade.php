@@ -4,11 +4,11 @@
 
 
 <div class="pagetitle">
-    <h1>Layanan</h1>
+    <h1>Layanan Poliklinik</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item active">Layanan</li>
+            <li class="breadcrumb-item active">Layanan Poliklinik</li>
         </ol>
     </nav>
     @if(session()->has('pesan'))
@@ -17,7 +17,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <a href="/dashboard/layanan/create" class="btn btn-primary text-white">Tambah layanan <i class="bi bi-arrow-right-short"></i></a>
+    <a href="/dashboard/layanan-poliklinik/create" class="btn btn-primary text-white">Tambah layanan <i class="bi bi-arrow-right-short"></i></a>
     <a href="/dashboard/layananImage" class="btn btn-secondary text-white">Kelola Gambar Layanan <i class="bi bi-arrow-right-short"></i></a>
 
 </div><!-- End Page Title -->
@@ -34,21 +34,20 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Jenis Layanan</th>
-                                <th scope="col">Nama Layanan</th>
+                                <th scope="col">Poliklinik</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($layanans as $layanan)
+                            @foreach($poliklinik as $poli)
                             <tr>
-                                <td>{{$layanan->jenis_layanan}}</td>
-                                <td>{{$layanan->nama_layanan}}</td>
+                                <td>{{$poli->poliklinik}}</td>
                                 <td>
-                                    <a href="/dashboard/layanan/{{$layanan->slug}}/edit" class="btn btn-primary" title="Edit Layanan"><i class="bi bi-pencil-square"></i></a>
-                                    <a href="/dashboard/layanan/{{$layanan->slug}}" class="btn btn-warning" title="Tambah gambar Layanan"><i class="bi bi-images"></i></a>
-                                    <a href="/dashboard/layanan/detail/{{$layanan->slug}}" class="btn btn-success" title="Detail Layanan"><i class="bi bi-eye"></i></a>
-                                    <form action="/dashboard/layanan/{{$layanan->slug}}" method="POST" class="d-inline">
+
+                                    <a href="/dashboard/layanan-poliklinik/{{$poli->slug}}/edit" class="btn btn-primary" title="Edit Layanan"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="/dashboard/layanan-poliklinik/{{$poli->slug}}" class="btn btn-warning" title="Tambah gambar poliklinik"><i class="bi bi-images"></i></a>
+                                    <a href="/dashboard/layanan/detail/{{$poli->slug}}" class="btn btn-success" title="Detail Layanan"><i class="bi bi-eye"></i></a>
+                                    <form action="/dashboard/layanan-poliklinik/{{$poli->slug}}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="bi bi-trash"></i></button>
@@ -58,6 +57,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-start">
+                        {{$poliklinik->links()}}
+                    </div>
                     <!-- End Default Table Example -->
                 </div>
             </div>

@@ -151,8 +151,11 @@
                     <div class="row justify-content-between">
                         <div class="col-lg-4 col-md-6 footer-widget footer-about">
                             <h3 class="widget-title">Tentang Kami</h3>
-                            <img loading="lazy" width="200px" class="footer-logo" src="{{ asset('Template') }}/images/logo-gh-test.png" alt="Constra">
-                            <p class="text-white">Menjadi Rumah Sakit pilihan utama masyarakat Batam tahun 2022</p><br>
+                            <img loading="lazy" width="200px" class="footer-logo" src="{{ asset('Template') }}/images/logo-gh-test-white.png" alt="Constra">
+                            <p class="text-white">Rumah Sakit Graha Hermine adalah salah satu rumah sakit swasta di Batam yang berdiri pada tanggal 3 Desember 2009.</p>
+                            <a href="/tentang" class="text-white">Selengkapnya</a>
+                            <br>
+                            <hr>
                             <p class="text-white">Temukan kami:</p>
                             <div class="footer-social">
                                 <ul>
@@ -167,7 +170,7 @@
                         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
                             <h3 class="widget-title">Jam Operasional RS</h3>
                             <div class="working-hours text-white">
-                                RS Graha Hermine melayani psien IGD selama 24 jam dan pasien yang membutuhkan konsultasi bisa melihat jadwal dokter pada menu dokter kami <br>
+                                RS Graha Hermine melayani psien IGD selama 24 jam dan pasien yang membutuhkan konsultasi bisa melihat jadwal dokter pada menu jadwal dokter <br>
                                 jam besuk pasien:
                                 <br><br> Senin - Minggu: <span class="text-right">10:00 - 16:00 </span>
                                 <br> Sabtu: <span class="text-right">12:00 - 15:00</span>
@@ -176,10 +179,10 @@
                         </div><!-- Col end -->
 
                         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                            <h3 class="widget-title">Layanan</h3>
+                            <h3 class="widget-title">Poliklinik</h3>
                             <ul class="list-arrow">
                                 @foreach($lyn as $lyns)
-                                <li><a href="/services/detail/{{ $lyns->slug }}" class="text-white">{{ $lyns->nama_layanan }} </a></li>
+                                <li><a href="/services/detail/{{ $lyns->slug }}" class="text-white">{{ $lyns->poliklinik }} </a></li>
                                 @endforeach
                                 <li><a href="/services" class="text-white">Selengkapnya <i class="fas fa-arrow-right"></i></a></li>
                             </ul>

@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Banner;
 use App\Models\Dokter;
-use App\Models\Layanan;
-use App\Models\LayananImage;
 use App\Models\JadwalDokter;
 use App\Models\Lamaran;
 use App\Models\Lowongan;
 use App\Models\Galeri;
+use App\Models\Layanan_poliklinik;
 
 class MainController extends Controller
 {
@@ -22,7 +21,7 @@ class MainController extends Controller
             'posts' => Blog::latest()->paginate(3),
             'banners' => Banner::all(),
             'galeris' => Galeri::paginate(6),
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -30,7 +29,7 @@ class MainController extends Controller
     {
         return view('/tentang', [
             'tittle' => 'Tentang Kami',
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -39,7 +38,7 @@ class MainController extends Controller
         return view('dokter/profilDokter', [
             'tittle' => "Profil Dokter",
             'datas' => Dokter::paginate(6),
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -47,10 +46,9 @@ class MainController extends Controller
     {
         return view('dokter/jadwal', [
             'tittle' => 'Jadwal Dokter',
-            'dokters' => Dokter::all(),
-            'dokterCari' => Dokter::filter(request(['search']))->paginate(10)->withQueryString(),
-            'jadwal' => JadwalDokter::all(),
-            'lyn' => Layanan::paginate(5)
+            'dokters' => Dokter::latest()->filter(request(['search', 'poliklinik']))->paginate(7),
+            'poliklinik' => Layanan_poliklinik::all(),
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -58,38 +56,31 @@ class MainController extends Controller
     {
         return view('dokter/profilDokterSingle', [
             'tittle' => "profil Dokter",
-            'senin' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Senin')->first(),
-            'selasa' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Selasa')->first(),
-            'rabu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Rabu')->first(),
-            'kamis' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Kamis')->first(),
-            'jumat' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Jumat')->first(),
-            'sabtu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Sabtu')->first(),
-            'minggu' => JadwalDokter::where('dokter_id', $dokter->id)->where('hari', 'Minggu')->first(),
+            'jadwal' => JadwalDokter::where('dokter_id', $dokter->id)->first(),
             'data' => $dokter,
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
-    // bagian layanan
+    // bagian layanan_poliklinik
 
     public function layananIndex()
     {
         return view('layanan/layananData', [
             'tittle' => 'Layanan',
-            'layanans' => Layanan::all(),
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
-    public function layananDetail(Layanan $layanan)
-    {
-        return view('layanan/layananDetail', [
-            'tittle' => 'Layanan',
-            'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
-            'layanan' => $layanan,
-            'lyn' => Layanan::paginate(5)
-        ]);
-    }
+    // public function layananDetail(Layanan $layanan)
+    // {
+    //     return view('layanan/layananDetail', [
+    //         'tittle' => 'Layanan',
+    //         'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
+    //         'layanan' => $layanan,
+    //         'lyn' => Layanan::paginate(5)
+    //     ]);
+    // }
 
     // bagian karir
 
@@ -98,7 +89,7 @@ class MainController extends Controller
         return view('karir/karirGuest', [
             'tittle' => 'Karir',
             'lowongan' => Lowongan::latest()->filter(request(['search']))->paginate(10)->withQueryString(),
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -107,7 +98,7 @@ class MainController extends Controller
         return view('karir/karirGuestDetail', [
             'tittle' => 'Karir',
             'lowongan' => $lowongan,
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 
@@ -138,7 +129,7 @@ class MainController extends Controller
         return view('galeri/galeriGuest', [
             'tittle' => 'Galeri',
             'galeris' => Galeri::all(),
-            'lyn' => Layanan::paginate(5)
+            'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
 }

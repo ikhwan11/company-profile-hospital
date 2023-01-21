@@ -11,13 +11,13 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LamaranController;
-use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\BlogGuestController;
 use App\Http\Controllers\PoliklinikController;
 use App\Http\Controllers\jadwalDokterController;
 use App\Http\Controllers\LayananImageController;
 use App\Http\Controllers\LayananDetailController;
+use App\Http\Controllers\LayananPoliklinikController;
 
 
 
@@ -76,20 +76,24 @@ Route::resource('/dashboard/banner', BannerController::class)->middleware('auth'
 
 // Dokter
 Route::resource('/dashboard/dokter', DokterController::class)->middleware('auth');
-Route::resource('/dashboard/poliklinik', PoliklinikController::class)->middleware('auth');
 
 // jadwal dokter
-Route::resource('/dashboard/jadwal', jadwalDokterController::class)->middleware('auth');
+Route::get('/dashboard/dokter-jadwal/{dokter}', [jadwalDokterController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/jadwal-edit/{id}', [jadwalDokterController::class, 'edit'])->middleware('auth');
+Route::resource('/dashboard/jadwal-edit', jadwalDokterController::class,)->middleware('auth');
+Route::post('/dashboard/dokter-jadwal', [jadwalDokterController::class, 'store'])->middleware('auth');
 
 // lowongan
 Route::resource('/dashboard/lowongan', LowonganController::class)->middleware('auth');
 Route::get('/dashboard/lamaran/{lowongan}', [LamaranController::class, 'index'])->middleware('auth');
 Route::resource('/dashboard/lamaran', LamaranController::class)->middleware('auth');
 
+// layanan-poliklinik
+Route::resource('/dashboard/layanan-poliklinik', LayananPoliklinikController::class)->middleware('auth');
+
 // layanan
-Route::resource('/dashboard/layanan', LayananController::class)->middleware('auth');
 Route::resource('/dashboard/layananImage', LayananImageController::class)->middleware('auth');
-Route::get('/dashboard/layanan/detail/{layanan}', [LayananDetailController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/layanan/detail/{layanan_poliklinik}', [LayananDetailController::class, 'index'])->middleware('auth');
 
 // galeri
 Route::resource('/dashboard/galeri', GaleriController::class)->middleware('auth');

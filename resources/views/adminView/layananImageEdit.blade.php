@@ -7,7 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/dashboard/layanan">Layanan</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard/layanan-poliklinik">Layanan Poliklinik</a></li>
             <li class="breadcrumb-item active">Edit gambar</li>
         </ol>
     </nav>

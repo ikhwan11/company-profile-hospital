@@ -13,13 +13,14 @@ class Dokter extends Model
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
-            return $query->where('nama', 'like', '%' . $search . '%');
+            return $query->where('nama', 'like', '%' . $search . '%')
+                ->orWhere('poliklinik_id', 'like', '%' . $search . '%');
         });
     }
 
     protected function poliklinik()
     {
-        return $this->belongsTo(Poliklinik::class);
+        return $this->belongsTo(Layanan_Poliklinik::class);
     }
 
     public function jadwal()
