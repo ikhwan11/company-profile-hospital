@@ -3,7 +3,34 @@
 @section('content')
 
 @php
+
 $bg = asset('Template');
+
+function get_CURL($url){
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+$result = curl_exec($curl);
+
+curl_close($curl);
+
+return json_decode($result, true);
+}
+
+$result = get_CURL('https://youtube.googleapis.com/youtube/v3/channels?part=snippet&part=statistics&id=UCrVa5dDtzD7ARnE3TqN4Wig&key=AIzaSyCH95bdnFWY1U6cpCnx1TqJ7ehv5dA2QAI');
+
+
+$ytProfilePic = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
+$ytProfileTitle = $result['items'][0]['snippet']['title'];
+$desc = $result['items'][0]['snippet']['localized']['description'];
+
+$urlVideo = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCrVa5dDtzD7ARnE3TqN4Wig&maxResults=1&order=date&key=AIzaSyCH95bdnFWY1U6cpCnx1TqJ7ehv5dA2QAI';
+$result = get_CURL($urlVideo);
+
+$latestVideo = $result['items'][0]['id']['videoId'];
+
 @endphp
 <div class="banner-carousel banner-carousel-2">
     <div class="banner-carousel-item" style="background-image:url({{$bg}}/images/slider-main/bg-pendaftaran.jpg)">
@@ -29,7 +56,6 @@ $bg = asset('Template');
 
     @endforeach
 </div>
-
 
 
 <section class="call-to-action no-padding">
@@ -74,6 +100,35 @@ $bg = asset('Template');
         </div>
     </div>
 </section> -->
+
+<section class="social" id="social">
+    <div class="row ml-3 mr-3">
+        <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" width="960" height="540" src="https://www.youtube.com/embed/<?= $latestVideo  ?>" title="YouTube video" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 960px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="<?= $ytProfilePic ?>" class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $ytProfileTitle ?></h5>
+                            <p class="card-text"><?= $desc ?></p>
+                            <p>Subscribe sekarang:</p>
+                            <div class="g-ytsubscribe" data-channelid="UCrVa5dDtzD7ARnE3TqN4Wig" data-layout="default" data-count="default"></div>
+                            <!-- <button class="btn text-white" style="background-color: #FF0000;">Subscribe</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@RumahSakitGrahaHermine/featured" class="btn btn-primary">More Video</a>
+        </div>
+    </div>
+</section>
 
 <section id="ts-service-area" class="ts-service-area pb-0">
     <div class="container">

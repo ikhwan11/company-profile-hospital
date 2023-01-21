@@ -38,6 +38,8 @@ Route::get('/dokter/profil/{dokter}', [MainController::class, 'profilDokterDetai
 // layanan guest
 Route::get('/services', [MainController::class, 'layananIndex'])->middleware('guest');
 Route::get('/services/detail/{layanan}', [MainController::class, 'layananDetail'])->middleware('guest');
+Route::get('/services/layanan-poliklinik', [MainController::class, 'layananPoliklinik'])->middleware('guest');
+Route::get('/services/layanan-poliklinik/detail/{layanan_poliklinik}', [MainController::class, 'layananPoliklinikDetail'])->middleware('guest');
 
 // karir guest
 Route::get('/karir', [MainController::class, 'karirIndex'])->middleware('guest');

@@ -11,6 +11,7 @@ use App\Models\Lamaran;
 use App\Models\Lowongan;
 use App\Models\Galeri;
 use App\Models\Layanan_poliklinik;
+use App\Models\LayananImage;
 
 class MainController extends Controller
 {
@@ -62,12 +63,34 @@ class MainController extends Controller
         ]);
     }
 
-    // bagian layanan_poliklinik
+    // bagian layanan
 
     public function layananIndex()
     {
         return view('layanan/layananData', [
             'tittle' => 'Layanan',
+            'lyn' => Layanan_poliklinik::paginate(5)
+        ]);
+    }
+
+    // layanan poliklinik
+
+    public function layananPoliklinik()
+    {
+        return view('layanan/layananPoliklinik', [
+            'tittle' => 'Layanan',
+            'poliklinik' => Layanan_poliklinik::all(),
+            'lyn' => Layanan_poliklinik::paginate(5)
+        ]);
+    }
+
+    public function layananPoliklinikDetail(Layanan_poliklinik $layanan_poliklinik)
+    {
+        return view('layanan/layananPoliklinikDetail', [
+            'tittle' => 'Layanan',
+            'poliklinik' => $layanan_poliklinik,
+            'dokters' => Dokter::where('poliklinik_id', $layanan_poliklinik->id)->get(),
+            'images' => LayananImage::where('layanan_id', $layanan_poliklinik->id)->get(),
             'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }

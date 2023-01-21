@@ -69,7 +69,7 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                     </h4>
                     <span>kami menyediakan layanan poliklinik yang lengkap dengan ditangani oleh dokter spesialis yang ahli</span>
                 </div>
-                <a href="" class="btn btn-primary">Selengkapnya</a>
+                <a href="/services/layanan-poliklinik" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
 

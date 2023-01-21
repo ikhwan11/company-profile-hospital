@@ -65,7 +65,7 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                             <img loading="lazy" class="w-100" src="{{ asset('storage/'.$dokter->image) }}" alt="team-img">
                         </div>
                         <div class="ts-team-content">
-                            <h3 class="ts-name text-white">{{ $dokter->nama }}</h3>
+                            <p class="text-white"> <Strong>{{$dokter->nama}}</Strong></p>
                             <p class="ts-designation">{{ $dokter->poliklinik->poliklinik }}</p>
                             <div class="team-social-icons">
                                 <a class="btn btn-primary" href="/dokter/profil/{{$dokter->slug}}"><small class="text-small">Lihat Jadwal</small> <i class="fas fa-arrow-right"></i></a>

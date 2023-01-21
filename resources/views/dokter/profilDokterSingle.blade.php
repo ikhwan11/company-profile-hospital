@@ -11,7 +11,8 @@
                     </div>
                     <div class="col-md-9">
                         <div class="card-body">
-                            <h3 class="card-title">{{ $data->nama }}</h3><span>
+                            <p class="card-title" style="font-size: 1.875em;"><strong>{{ $data->nama }}</strong></p>
+                            <span>
                                 <p class="card-text text-muted">Poliklinik : {{ $data->poliklinik->poliklinik }}</p>
                             </span>
                             <br>
