@@ -24,53 +24,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456')
         ]);
 
-        // kategori
-        PostCategory::create([
-            'kategori' => 'Tips kesehatan',
-            'slug' => 'tips-kesehatan'
-        ]);
-
-        PostCategory::create([
-            'kategori' => 'Ibu dan Anak',
-            'slug' => 'ibu-dan-anak'
-        ]);
-
-        // banner
-
-        Banner::create([
-            'banner_title' => 'banner satu',
-            'image' => 'banner-images/fGUY92kSDvLDuYdTkR2FVfheTP5Od2hppanlQ5vf.jpg'
-        ]);
-        Banner::create([
-            'banner_title' => 'banner dua',
-            'image' => 'banner-images/2qq4h3g2VLoKI5r1VKQCc3D9y7HsQgoVvyluvQ7H.jpg'
-        ]);
-        Banner::create([
-            'banner_title' => 'banner tiga',
-            'image' => 'banner-images/TsoN2pYjNl6S4C51fZQfxa3T2QFbAIoSXVvQmoa5.jpg'
-        ]);
-
-        // poliklinik
-
-        Poliklinik::create([
-            'poliklinik' => 'Bedah Saraf',
-            'slug' => 'bedah-saraf'
-        ]);
-
-        Poliklinik::create([
-            'poliklinik' => 'THT',
-            'slug' => 'tht'
-        ]);
-
-        Poliklinik::create([
-            'poliklinik' => 'Penyakit Dalam',
-            'slug' => 'penyakit-dalam'
-        ]);
-
-        Poliklinik::create([
-            'poliklinik' => 'Anestesi',
-            'slug' => 'anestesi'
-        ]);
 
         // dokter
         Dokter::create([

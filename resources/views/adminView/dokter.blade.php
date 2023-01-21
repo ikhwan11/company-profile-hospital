@@ -25,7 +25,6 @@
 
     <div class="col">
         <a href="/dashboard/dokter/create" class="btn btn-primary text-white">Tambah Data <i class="bi bi-arrow-right-short"></i></a>
-        <a href="/dashboard/poliklinik/create" class="btn btn-warning">Tambah Klinik Dokter <i class="bi bi-arrow-right-short"></i></a>
         <a href="/dashboard/jadwal/create" class="btn btn-dark text-white">Buat Jadwal Dokter<i class="bi bi-arrow-right-short"></i></a>
 
     </div>

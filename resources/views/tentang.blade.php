@@ -5,7 +5,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="column-title">Nilai Kami</h3>
+                <h3 class="column-title">Tentang Kami</h3>
+                <div class="row">
+                    <div class="col">
+                        <h5 class="">MOTO</h5>
+                        <p>Kesehatan Anda prioritas kami</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col">
                         <h5 class="">VISI</h5>
@@ -30,59 +36,7 @@
 
             <div class="col-lg-6 mt-5 mt-lg-0">
 
-                <div id="page-slider" class="page-slider small-bg">
-
-                    <div class="item" style="background-image:url(Template/images/slider-pages/slide-page1.jpg)">
-                        <div class="container">
-                            <div class="box-slider-content">
-                                <div class="box-slider-text">
-                                    <h2 class="box-slide-title">Proffesional </h2>
-                                    <span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image:url(Template/images/slider-pages/slide-page2.jpg)">
-                        <div class="container">
-                            <div class="box-slider-content">
-                                <div class="box-slider-text">
-                                    <h2 class="box-slide-title">Leadership</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image:url(Template/images/slider-pages/slide-page3.jpg)">
-                        <div class="container">
-                            <div class="box-slider-content">
-                                <div class="box-slider-text">
-                                    <h2 class="box-slide-title">Mendengarkan</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image:url(Template/images/slider-pages/slide-page4.jpg)">
-                        <div class="container">
-                            <div class="box-slider-content">
-                                <div class="box-slider-text">
-                                    <h2 class="box-slide-title">Rapi</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image:url(Template/images/slider-pages/slide-page5.jpg)">
-                        <div class="container">
-                            <div class="box-slider-content">
-                                <div class="box-slider-text">
-                                    <h2 class="box-slide-title">asertif</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yfwblKqp7jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div><!-- Content row end -->
 

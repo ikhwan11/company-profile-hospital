@@ -14,7 +14,7 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-md-12 text-center">
-                        <h2 class="slide-title" data-animation-in="slideInLeft">17 Tahun Mengabdi dan</h2>
+                        <h2 class="slide-title" data-animation-in="slideInLeft">Mengabdi dan</h2>
                         <h3 class="slide-sub-title" data-animation-in="slideInRight">melayani Masyarakat</h3>
                     </div>
                 </div>
@@ -56,17 +56,41 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
     </div>
 
     <div class="row">
-        @foreach($layanans as $layanan)
-        <div class="col-md-4">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="card-body">
-                    <h3 class="card-title"><a href="">{{ $layanan->nama_layanan }}</a></h3>
-                    <p>{{$layanan->jenis_layanan}}</p>
-                    <a href="/services/detail/{{$layanan->slug}}" class="btn btn-primary">Selengkapnya</a>
+        <div class="col-lg-6 col-md-6 mb-4">
+            <div class="latest-post">
+                <div class="latest-post-media">
+                    <a href="#" class="latest-post-img">
+                        <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/poliklinik.jpg" alt="img">
+                    </a>
+                </div>
+                <div class="post-body">
+                    <h4 class="post-title">
+                        <a href="#" class="d-inline-block">POLIKLINIK</a>
+                    </h4>
+                    <div class="latest-post-meta">
+                        <span class="post-item-date">July 20, 2017</span>
+                    </div>
                 </div>
             </div>
         </div>
-        @endforeach
+
+        <div class="col-lg-6 col-md-6 mb-4">
+            <div class="latest-post">
+                <div class="latest-post-media">
+                    <a href="#" class="latest-post-img">
+                        <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/IGD.jpg" alt="img">
+                    </a>
+                </div>
+                <div class="post-body">
+                    <h4 class="post-title">
+                        <a href="#" class="d-inline-block">IGD (Instalasi Gawat Darurat)</a>
+                    </h4>
+                    <div class="latest-post-meta">
+                        <span class="post-item-date"> July 20, 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

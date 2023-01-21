@@ -1435,9 +1435,9 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 }
 
 .box-slider-text {
-  background: #111;
+  /* background: #111;
   background: rgba(0, 0, 0, 0.65);
-  display: inline-block;
+  display: inline-block; */
   padding: 20px 30px;
   max-width: 650px;
 }
@@ -1457,7 +1457,9 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 .box-slide-sub-title {
   font-size: 36px;
   margin: 8px 0 10px;
-  color: #fff;
+  background: linear-gradient(to bottom, #00359d 0%, #072474 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 @media (max-width: 767px) {
   .box-slide-sub-title {
@@ -3351,3 +3353,7 @@ label {
   font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* layanan figure */
+
+

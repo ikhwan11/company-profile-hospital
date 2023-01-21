@@ -7,7 +7,6 @@ use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
 use App\Models\Poliklinik;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 
 class DokterController extends Controller
 {

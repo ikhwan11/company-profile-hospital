@@ -107,6 +107,8 @@
 
                                     <li class="nav-item"><a class="nav-link" href="https://bit.ly/surveikepuasanpasienRSGH">Survei Kepuasan</a></li>
 
+                                    <li class="nav-item"><a class="nav-link" href="#">E-Library</a></li>
+
                                     <li class="header-get-a-quote">
                                         <a class="btn btn-primary" href="/login">Sign In</a>
                                     </li>

@@ -15,12 +15,6 @@ class Dokter extends Model
         $query->when($filters['search'] ?? false, function ($query, $search) {
             return $query->where('nama', 'like', '%' . $search . '%');
         });
-
-        $query->when($filters['poliklinik'] ?? false, function ($query, $poliklinik) {
-            return $query->whereHas('poliklinik', function ($query) use ($poliklinik) {
-                $query->where('slug', $poliklinik);
-            });
-        });
     }
 
     protected function poliklinik()

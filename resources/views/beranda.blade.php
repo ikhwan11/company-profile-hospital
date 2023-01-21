@@ -2,13 +2,31 @@
 
 @section('content')
 
-
+@php
+$bg = asset('Template');
+@endphp
 <div class="banner-carousel banner-carousel-2">
+    <div class="banner-carousel-item" style="background-image:url({{$bg}}/images/slider-main/bg-pendaftaran.jpg)">
+        <div class="container">
+            <div class="box-slider-content">
+                <div class="box-slider-text">
+                    <h3 class="box-slide-sub-title">PENDAFTARAN ONLINE</h3>
+                    <p class="box-slide-description text-dark">Sekarang daftar gak perlu ribet, bisa daftar melalui WhatsApp untuk Pasien <br> <strong>BPJS, Umum, & Asuransi</strong></p>
+                    <p>
+                        <a href="https://api.whatsapp.com/send?phone=6282386828066" class="slider btn btn-primary">Klik untuk daftar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @foreach($banners as $banner)
     @php
     $bgImage = asset('Storage/'.$banner->image);
     @endphp
+
     <div class="banner-carousel-item" style="background-image:url({{$bgImage}})"></div>
+
     @endforeach
 </div>
 
