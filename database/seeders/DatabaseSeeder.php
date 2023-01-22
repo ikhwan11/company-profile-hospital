@@ -3,15 +3,18 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Blog;
 use App\Models\User;
 use App\Models\Dokter;
-use App\Models\Elibrary;
-use App\Models\Fasilitas_Layanan;
 use App\Models\Folder;
+use App\Models\Galeri;
+use App\Models\Elibrary;
 use App\Models\JadwalDokter;
-use App\Models\Layanan_poliklinik;
 use App\Models\LayananImage;
+use App\Models\PostCategory;
 use Illuminate\Database\Seeder;
+use App\Models\Fasilitas_Layanan;
+use App\Models\Layanan_poliklinik;
 
 class DatabaseSeeder extends Seeder
 {
@@ -152,6 +155,87 @@ class DatabaseSeeder extends Seeder
             'tahun' => '2023',
             'folder_id' => '2',
             'file_buku' => 'elibrary-file/g6pYcrz1VPmV8yIC5HOPWELUwjUPViAGWNuRt04V.pdf',
+        ]);
+
+        // gallery
+        Galeri::create([
+            'title_galeri' => 'pemeriksaan anak',
+            'slug' => 'pemeriksaan-anak',
+            'keterangan' => '<div>pemeriksaan anak</div>',
+            'image' => 'galeri-images/mWHkRJtnIBUIpkK1zSTsumw3HkVj5ofAe0NosMJu.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'Foto Bersama Pelatihan BTCLS',
+            'slug' => 'foto-bersama-pelatihan-btcls',
+            'keterangan' => '<div>Foto Bersama Pelatihan BTCLS</div>',
+            'image' => 'galeri-images/L4lLif3LazDr4RHO4eQyfbvIx2xsgud7Zism9sQf.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'Test Antigen Gratis',
+            'slug' => 'test-antigen-gratis',
+            'keterangan' => '<div>Test Antigen Gratis</div>',
+            'image' => 'galeri-images/IsZw33FzKoB9h67oZcE2VsxvLsHJgSTBpCUGR3Jt.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'Komp pengungisan bencana alam',
+            'slug' => 'komp-pengungisan-bencana-alam',
+            'keterangan' => '<div>Komp pengungisan bencana alam</div>',
+            'image' => 'galeri-images/nkqqeUfuPrcBu2OH1lbpVvIUJZK2aMeDDxyIh4Ut.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'Temu Direksi',
+            'slug' => 'temu-direksi',
+            'keterangan' => '<div>Temu Direksi</div>',
+            'image' => 'galeri-images/wwj9xK7QDTT1rsJFJqVgooMCRuPHKtwepevmiMwh.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'MoU dengan PT. Maju MUndur',
+            'slug' => 'mou-dengan-pt.-maju-mundur',
+            'keterangan' => '<div>MoU dengan PT. Maju MUndur</div>',
+            'image' => 'galeri-images/0NKDYeRHql46Y968ihyqHTxpYAZeMTXm7U1J4uqg.jpg',
+        ]);
+
+        // kategori post
+        PostCategory::create([
+            'kategori' => 'Info kesehatan',
+            'slug' => 'info-kesehatan'
+        ]);
+        PostCategory::create([
+            'kategori' => 'Tips kesehatan',
+            'slug' => 'tips-kesehatan'
+        ]);
+        PostCategory::create([
+            'kategori' => 'Hot News',
+            'slug' => 'hot-news'
+        ]);
+
+        // artikel
+        Blog::create([
+            'title' => 'Mengenal Fungsi Rongga Mulut dan Cara Menjaga Kesehatannya',
+            'user_id' => '1',
+            'category_id' => '2',
+            'slug' => 'mengenal-fungsi-rongga-mulut-dan-cara-menjaga-kesehatannya',
+            'image' => 'post-images/oMEFEgZPRYZ2MNF5N2ZZxC7mbGqapXwgyIjx5bXE.jpg ',
+            'excerpt' => 'Fungsi rongga mulut dalam sistem pencernaan sangatlah penting. Bagian mulut ini memungkinkan seseorang untuk mengunyah, menelan, dan mencerna makanan, bahkan berbicara serta bernapas. Oleh karena itu,...',
+            'body' => '<div><strong>Fungsi rongga mulut dalam sistem pencernaan sangatlah penting. Bagian mulut ini memungkinkan seseorang untuk mengunyah, menelan, dan mencerna makanan, bahkan berbicara serta bernapas. Oleh karena itu, penting untuk selalu menjaga kesehatan rongga mulut.<br><br></strong>Rongga mulut merupakan organ pertama yang memproses makanan dalam sistem pencernaan. Organ yang membentuk ruang ini dimulai dari bibir hingga tenggorokan. Ciri-ciri rongga mulut yang sehat bisa dikenali dari jaringannya yang lembap, kencang, berwarna merah muda, dan tidak terasa sakit.<br><br><br>Selain itu, mulut yang sehat juga ditandai dengan bau mulut yang tidak menyengat. Normalnya, rongga mulut juga tidak memiliki benjolan, lipatan, maupun bercak. Guna mendukung fungsi rongga mulut, kesehatan mulut dan gigi perlu diperhatikan dengan baik.<br><br></div><div><strong><br>Mengenal Struktur Rongga Mulut</strong></div><div><br>Sebelum mengetahui fungsi rongga mulut, mari kenali terlebih dahulu struktur apa saja yang membentuk mulut beserta fungsinya. Beberapa struktur yang termasuk dalam rongga mulut meliputi:<br><br></div><ul><li>Gigi, untuk memotong dan menghaluskan makanan</li><li>Gusi, untuk menopang gigi pada tempatnya</li><li>Lidah, untuk membantu gigi menggerakkan makanan saat proses mengunyah dan berbicara</li><li>Indra perasa, untuk mengenali rasa pada makanan dan minuman</li><li>Selaput lendir, untuk menjaga kelembapan mulut</li><li>Kelenjar ludah, untuk menghasilkan ludah</li><li>Reseptor sensorik, untuk merasakan tekstur makanan atau minuman</li><li>Langit mulut dan uvula, untuk mencegah makanan dan minuman naik ke rongga hidung</li></ul><div><strong><br>Berbagai Fungsi Rongga Mulut</strong></div><div><br>Berikut ini adalah berbagai fungsi rongga mulut yang penting untuk diketahui:<br><br></div><div><strong><br>1. Mengunyah dan menelan makanan</strong></div><div><br>Seperti yang telah dijelaskan, mulut berfungsi sebagai organ yang pertama kali memproses makanan. Di dalam rongga mulut, makanan akan dikunyah oleh gigi agar dapat ditelan dan dicerna tubuh.<br><br></div><div><br>Proses ini juga melibatkan lidah untuk merasakan dan mendorong makanan, serta uvula untuk memindahkan makanan dari mulut ke kerongkongan.<br><br></div><div><strong><br>2. Bernapas</strong></div><div><br>Selain hidung, rongga mulut juga berperan dalam proses pernapasan. Artinya, saat tidak bisa bernapas melalui hidung, Anda bisa bernapas melalui mulut. Kondisi ini biasanya terjadi ketika hidung tersumbat atau menderita penyakit tertentu, seperti pembesaran adenoid.<br><br></div><div><br>Selain itu, bernapas melalui mulut saat berolahraga juga bisa membuat tubuh mendapatkan oksigen lebih cepat ke otot. Namun, bila terlalu sering dilakukan bisa berdampak buruk bagi kesehatan, seperti bau mulut, gigi berlubang, radang gusi, dan faringitis.<br><br></div><div><strong><br>3. Berbicara</strong></div><div><br>Fungsi rongga mulut juga penting dalam proses berbicara. Suara terbentuk ketika udara masuk melewati pita suara dan menimbulkan getaran serta gelombang suara di sepanjang tenggorokan, hidung, dan mulut. Selanjutnya, gerakan bibir dan lidah dapat membentuk kata-kata yang keluar dari mulut agar terdengar dengan jelas.<br><br></div><div><strong><br>4. Mengecap</strong></div><div><br>Mulut juga berfungsi untuk mengecap. Fungsi rongga mulut ini didukung oleh lidah yang dapat membedakan berbagai macam rasa, seperti manis, asin, asam, dan pahit. Dalam mengecap makanan, lidah dibantu oleh kelenjar saliva atau air liur. Tanpa air liur, Anda tidak bisa merasakan makanan.<br><br></div><div><strong><br>5. Membentuk ekspresi wajah</strong></div><div><br>Rongga mulut berperan dalam membentuk ekspresi wajah yang berbeda-beda, misalnya saat tersenyum, marah, atau menangis. Berbagai ekspresi wajah tersebut dapat dihasilkan dengan melibatkan otot mulut dan sekitarnya.<br><br></div><div><strong><br>Cara Menjaga Fungsi Rongga Mulut</strong></div><div><br>Berikut ini adalah beberapa cara untuk menjaga fungsi rongga mulut yang bisa diterapkan sehari-hari:<br><br></div><ul><li>Sikat gigi dan lidah secara rutin minimal 2 kali sehari.</li><li>Hentikan kebiasaan merokok dan mengunyah tembakau.</li><li>Lakukan <em>flossing</em> gigi minimal sekali sehari.</li><li>Gunakan pasta gigi yang mengandung fluoride.</li><li>Perbanyak minum air putih.</li><li>Batasi konsumsi minuman manis, seperti soda.</li><li>Konsumsi makanan sehat dan bergizi.</li><li>Hindari terlalu banyak konsumsi gula.</li><li>Lakukan pemeriksaan gigi secara rutin ke dokter setidaknya 2 kali setahun.</li></ul><div><br>Jika fungsi rongga mulut Anda terganggu, misalnya ada luka atau benjolan yang tak kunjung hilang, sering mengalami pendarahan, ada celah antara gigi dan gusi, mulut berbau busuk, atau mulut sering terasa kering, jangan ragu periksakan diri ke dokter agar bisa mendapatkan pemeriksaan dan penanganan yang tepat.<br><br></div>',
+        ]);
+        Blog::create([
+            'title' => 'Hati-hati ada 7 bahaya konsumsi gula berlebih',
+            'user_id' => '1',
+            'category_id' => '1',
+            'slug' => 'hati-hati-ada-7-bahaya-konsumsi-gula-berlebih',
+            'image' => 'post-images/DqSaTKd4PtEIlxbptfrKruTkpUktKDAZty3HgNq1.jpg',
+            'excerpt' => 'Siapa yang bisa menolak nikmat cake cokelat atau es krim stroberi vanila? Namun waspadai bahaya konsumsi gula berlebih.Tapi berapa banyak-kah berlebih? Mengacu anjuran Kementerian Kesehatan. Konsumsi...',
+            'body' => '<div>Siapa yang bisa menolak nikmat cake cokelat atau es krim stroberi vanila? Namun waspadai bahaya konsumsi gula berlebih.<br>Tapi berapa banyak-kah berlebih? Mengacu anjuran Kementerian Kesehatan. Konsumsi gula maksimal sebanyak 4 sendok makan atau 54 gram per orang per hari. Melebihi dari jumlah ini dan terus dilakukan rutin, ada sederet bahaya konsumsi gula berlebih.<br><br><strong>1. Obesitas</strong><br>Melansir dari Healthline, minuman dengan pemanis seperti soda, jus, dan teh manis mengandung fruktosa atau sejenis gula sederhana.<br><br>Konsumsi fruktosa malah meningkatkan rasa lapar dan keinginan untuk mengonsumsi glukosa atau jenis gula utama dari makanan bertepung. Kenapa bisa demikian?<br><br>Konsumsi fruktosa berlebihan akan mengakibatkan resistensi terhadap leptin. Leptin merupakan hormon yang mengatur rasa lapar dan memberitahu tubuh untuk berhenti makan. Bisa dibayangkan saat Anda terus merasa lapar dan menginginkan makanan dengan glukosa sehingga mengakibatkan berat badan meningkat.<br><br>Selain itu, minum minuman berpemanis tambahan berkaitan dengan peningkatan lemak visceral yakni lemak perut bagian dalam yang berhubungan dengan diabetes dan penyakit jantung.<br><br><strong>2. Jerawat</strong><br>Salah satu bahaya konsumsi gula berlebih adalah jerawat. Ini kerap dianggap persoalan sepele tetapi jerawat yang parah dan muncul di area wajah jelas menurunkan rasa percaya diri dan tidak nyaman.<br><br>Melansir dari Medical News Today, studi pada 2018 di China menunjukkan orang yang minum minuman berpemanis tujuh kali per minggu lebih berisiko mengalami jerawat moderat hingga parah. Studi lain pada 2019 menyebut konsumsi gula bisa menurunkan faktor pembentuk mirip insulin, androgen dan sebum yang semuanya berkontribusi pada jerawat.<br><br><strong>3. Meningkatkan risiko penyakit jantung</strong><br>Bahaya konsumsi gula berlebih juga bisa mengarah pada peningkatan risiko penyakit jantung. Diet tinggi gula akan mengakibatkan obesitas, peradangan, kadar trigliserida tinggi, tekanan darah lalu semua akan bermuara pada penyakit jantung.<br><br>Konsumsi gula terutama dari minuman berpemanis berkaitan dengan aterosklerosis. Penyakit ini ditandai dengan tumpukan plak pada arteri sehingga mengakibatkan penyumbatan aliran darah.<br><br><strong>4. Diabetes tipe 2</strong><br>Ingat gula, ingat diabetes tipe 2. Ini tidak salah sebab salah satu bahaya konsumsi gula berlebih memang risiko diabetes tipe 2. Artikel yang diterbitkan di jurnal PLOS One pada 2013 menyebut diet tinggi gula terus-menerus bisa mengakibatkan diabetes tipe 2.<br><br>Selama 30 tahun terakhir, prevalensi diabetes meningkat jauh dua kali lipat. Konsumsi gula berlebih dalam jangka waktu panjang akan mendorong resistensi terhadap insulin atau hormon yang diproduksi oleh pankreas untuk mengatur kadar gula darah. Saat terjadi resistensi insulin, kadar gula naik sehingga timbul risiko diabetes. Diabetes tipe 2 menjadi salah satu bahaya konsumsi gula berlebih.<br><br><strong>5. Risiko kanker</strong><br>Tak hanya diabetes tipe 2 yang patut diwaspadai. Anda pun perlu waspada dengan risiko kanker sebagai bahaya konsumsi gula berlebih.<br><br>Saat tubuh diberi banyak asupan gula, timbul inflamasi, stres oksidatif dan obesitas. Faktor-faktor ini mempengaruhi pertumbuhan sel kanker. Sebuah tinjauan yang diterbitkan di Annual Review of Nutrition menemukan konsumsi minuman berpemanis meningkatkan risiko kanker 23-200 persen.<br><br><strong>6. Penuaan dini</strong><br>Penggunaan skincare perlu diimbangi dengan diet yang sehat. Kelebihan konsumsi gula akan mengarah pada pembentukan advanced glycation end products (AGEs) yang berperan dalam diabetes juga pembentukan kolagen di kulit. Jumlah AGE tinggi bisa menimbulkan penuaan lebih cepat.<br><br><strong>7. Risiko depresi</strong><br>Bahaya konsumsi gula berlebih juga berakibat pada risiko depresi. Peluang depresi makin tinggi akibat bahaya konsumsi gula berlebih.<br><br>Studi yang memonitor 8ribu orang selama 22 tahun menunjukkan pria yang mengonsumsi 67 gram gula per hari, punya risiko depresi 23 persen lebih tinggi daripada pria yang konsumsi gula kurang dari 40 gram per hari.<br><br>Studi lain pada lebih dari 69ribu wanita menunjukkan mereka yang konsumsi gula tinggi punya risiko depresi lebih tinggi daripada mereka yang asupannya rendah.<br><br><br></div>',
+        ]);
+        Blog::create([
+            'title' => 'Warga Perumahan di Batam Terpaksa Beli Air Galon untuk Mandi dan Mencuci',
+            'user_id' => '1',
+            'category_id' => '3',
+            'slug' => 'warga-perumahan-di-batam-terpaksa-beli-air-galon-untuk-mandi-dan-mencuci',
+            'image' => 'post-images/ibLCRLsoqnAoaHvaX5tRkgZy7AUzGws4oNxYG3yb.jpg',
+            'excerpt' => 'Warga di Perumahan Botania Garden, Batam Center, Kota Batam, Kepulauan Riau, riuh. Pasalnya, sudah dua hari air di kawasan Botania dan sekitarnya mati total.Air mati sejak Sabtu (21/1/2023) dini hari....',
+            'body' => '<div>Warga di Perumahan Botania Garden, Batam Center, Kota Batam, Kepulauan Riau, riuh. Pasalnya, sudah dua hari air di kawasan Botania dan sekitarnya mati total.<br><br>Air mati sejak <strong>Sabtu (21/1/2023)</strong> dini hari. Tepatnya sekitarnya pukul 05.00 WIB. Kabarnya kejadian serupa terjadi se-Kecamatan Nongsa.<br><br>"<em>Iya, udah dari kemarin air mati</em>" ujar salah seorang warga sekitar, Ari, <strong>Minggu (22/1/2023)</strong>.<br><br>Warga terpaksa antre membeli air galon untuk kebutuhan harian seperti mandi, mencuci dan lain sebagainya.<br><br>"<em>Kita aja di sini rata-rata sepuluh galon, itupun kadang bisa lebih,</em>" katanya.<br><br>Tak hanya kebutuhan rumahan, masjid pun juga terdampak. Dimana air untuk berwudhu pun kering.<br><br>"<em>Tangki masjid itu udah kosong. Jadi untuk salat pun masyarakat susah,</em>" kata Ari.<br><br>Ia harap PT Moya segera berbenah. Setidaknya ada langkah antisipatif dari penyedia air bersih agar masyarakat tak semakin kesusahan. </div>',
         ]);
     }
 }

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('excerpt');
             $table->text('body');
-            $table->timestamp('Published_at')->nullable();
             $table->timestamps();
         });
     }

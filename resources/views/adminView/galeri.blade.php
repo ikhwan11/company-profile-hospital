@@ -44,7 +44,7 @@
                         </thead>
                         <tbody>
                             @foreach($galeri as $data)
-                            <tr>
+                            <tr class="align-middle">
                                 <td><img src="{{ asset('storage/'.$data->image) }}" alt="" width="200"></td>
                                 <td>{{$data->title_galeri}}</td>
                                 <td>{{$data->created_at}}</td>

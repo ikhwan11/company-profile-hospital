@@ -16,7 +16,7 @@
                     <div class="entry-header">
                         <div class="post-meta">
                             <span class="post-author">
-                                <i class="far fa-user"></i>{{ $data->user->nama }}
+                                <i class="fas fa-user"></i>{{ $data->user->nama }}
                             </span>
                             <span class="post-meta-date"><i class="far fa-calendar"></i>{{$data->created_at}}</span>
                         </div>

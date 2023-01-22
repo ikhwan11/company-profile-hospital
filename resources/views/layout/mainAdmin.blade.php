@@ -138,6 +138,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/dashboard/partnership">
+                            <i class="bi bi-circle"></i><span>Partnership</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/blog">
                             <i class="bi bi-circle"></i><span>RSGH Blog</span>
                         </a>
