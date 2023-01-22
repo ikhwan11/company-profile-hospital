@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Banner;
 use App\Models\Dokter;
+use App\Models\Elibrary;
+use App\Models\Fasilitas_Layanan;
+use App\Models\Folder;
 use App\Models\JadwalDokter;
 use App\Models\Lamaran;
 use App\Models\Lowongan;
@@ -95,18 +98,29 @@ class MainController extends Controller
         ]);
     }
 
-    // public function layananDetail(Layanan $layanan)
-    // {
-    //     return view('layanan/layananDetail', [
-    //         'tittle' => 'Layanan',
-    //         'images' => LayananImage::where('layanan_id', $layanan->id)->get(),
-    //         'layanan' => $layanan,
-    //         'lyn' => Layanan::paginate(5)
-    //     ]);
-    // }
+    // fasilitas layanan
+    public function fasilitasLayanan()
+    {
+        return view('layanan/fasilitasLayanan', [
+            'tittle' => 'Layanan',
+            'fasilitas' => Fasilitas_Layanan::latest()->filter(request(['search']))->paginate(6),
+            'lyn' => Layanan_poliklinik::paginate(5)
+        ]);
+    }
 
-    // bagian karir
+    // elibrary
+    public function elibraryIndex()
+    {
+        return view('elibrary/elibrary', [
+            'tittle' => 'E-Library',
+            'libraries' => Elibrary::latest()->filter(request(['search']))->paginate(6),
+            'folder' => Folder::all(),
+            'lyn' => Layanan_poliklinik::paginate(5)
+        ]);
+    }
 
+
+    // karir
     public function karirIndex()
     {
         return view('karir/karirGuest', [

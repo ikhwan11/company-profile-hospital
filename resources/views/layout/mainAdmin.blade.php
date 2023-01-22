@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('TemplateAdmin')}}/assets/img/favicon.png" rel="icon">
+    <link href="{{asset('Template')}}/images/favicon.png" rel="icon">
     <link href="{{asset('TemplateAdmin')}}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -155,13 +155,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/dashboard/fasilitas-layanan">
                             <i class="bi bi-circle"></i><span>Fasilitas Layanan</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Layanan Unggulan</span>
                         </a>
                     </li>
                 </ul>
@@ -176,6 +171,12 @@
                 <a class="nav-link {{ ($tittle === "Lowongan") ? '' : 'collapsed'}}" href="/dashboard/lowongan">
                     <i class="bi bi-bag-fill"></i>
                     <span>Kelola Lowongan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ ($tittle === "E-Library") ? '' : 'collapsed'}}" href="/dashboard/e-library">
+                    <i class="bi bi-book"></i>
+                    <span>E-Library</span>
                 </a>
             </li>
         </ul>

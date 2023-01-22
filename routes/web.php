@@ -9,14 +9,17 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\User_Controller;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LamaranController;
+use App\Http\Controllers\ElibraryController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\BlogGuestController;
-use App\Http\Controllers\PoliklinikController;
 use App\Http\Controllers\jadwalDokterController;
 use App\Http\Controllers\LayananImageController;
 use App\Http\Controllers\LayananDetailController;
+use App\Http\Controllers\FasilitasLayananController;
+use App\Http\Controllers\LayananUnggulanController;
 use App\Http\Controllers\LayananPoliklinikController;
 
 
@@ -40,6 +43,10 @@ Route::get('/services', [MainController::class, 'layananIndex'])->middleware('gu
 Route::get('/services/detail/{layanan}', [MainController::class, 'layananDetail'])->middleware('guest');
 Route::get('/services/layanan-poliklinik', [MainController::class, 'layananPoliklinik'])->middleware('guest');
 Route::get('/services/layanan-poliklinik/detail/{layanan_poliklinik}', [MainController::class, 'layananPoliklinikDetail'])->middleware('guest');
+Route::get('/services/fasilitas-layanan', [MainController::class, 'fasilitasLayanan'])->middleware('guest');
+
+// elibrary
+Route::get('/e-library', [MainController::class, 'elibraryIndex'])->middleware('guest');
 
 // karir guest
 Route::get('/karir', [MainController::class, 'karirIndex'])->middleware('guest');
@@ -93,9 +100,19 @@ Route::resource('/dashboard/lamaran', LamaranController::class)->middleware('aut
 // layanan-poliklinik
 Route::resource('/dashboard/layanan-poliklinik', LayananPoliklinikController::class)->middleware('auth');
 
+// fasilitas layanan
+Route::resource('/dashboard/fasilitas-layanan', FasilitasLayananController::class)->middleware('auth');
+
+// layanan Unggulan
+Route::resource('/dashboard/layanan-unggulan', layananUnggulanController::class)->middleware('auth');
+
 // layanan
 Route::resource('/dashboard/layananImage', LayananImageController::class)->middleware('auth');
 Route::get('/dashboard/layanan/detail/{layanan_poliklinik}', [LayananDetailController::class, 'index'])->middleware('auth');
 
 // galeri
 Route::resource('/dashboard/galeri', GaleriController::class)->middleware('auth');
+
+// e-library
+Route::resource('/dashboard/e-library', ElibraryController::class)->middleware('auth');
+Route::resource('/dashboard/e-library/folder', FolderController::class)->middleware('auth');

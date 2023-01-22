@@ -102,12 +102,13 @@
                                             <li><a href="/dokter/profil">Profil Dokter</a></li>
                                             <li><a href="/galeri">Galeri</a></li>
                                             <li><a href="/karir">Karir</a></li>
+                                            <li><a href="#">Our Partners</a></li>
                                         </ul>
                                     </li>
 
                                     <li class="nav-item"><a class="nav-link" href="https://bit.ly/surveikepuasanpasienRSGH">Survei Kepuasan</a></li>
 
-                                    <li class="nav-item"><a class="nav-link" href="#">E-Library</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/e-library">E-Library</a></li>
 
                                     <li class="header-get-a-quote">
                                         <a class="btn btn-primary" href="/login">Sign In</a>
@@ -233,6 +234,9 @@
         <!-- Google Map API Key-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
         <!-- Google Map Plugin-->
+
+
+
         <script src="{{asset('Template')}}/plugins/google-map/map.js" defer></script>
 
         <!-- Template custom -->

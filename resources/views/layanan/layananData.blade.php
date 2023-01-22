@@ -56,16 +56,16 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
     </div>
 
     <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-6 col-md-6 mb-4">
             <div class="latest-post">
                 <div class="latest-post-media">
-                    <a href="#" class="latest-post-img">
+                    <a href="/services/layanan-poliklinik" class="latest-post-img">
                         <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/poliklinik.jpg" alt="img">
                     </a>
                 </div>
                 <div class="post-body">
                     <h4 class="post-title">
-                        <a href="#" class="d-inline-block">LAYANAN POLIKLINIK</a>
+                        <a href="/services/layanan-poliklinik" class="d-inline-block">LAYANAN POLIKLINIK</a>
                     </h4>
                     <span>kami menyediakan layanan poliklinik yang lengkap dengan ditangani oleh dokter spesialis yang ahli</span>
                 </div>
@@ -73,41 +73,22 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-6 col-md-6 mb-4">
             <div class="latest-post">
                 <div class="latest-post-media">
-                    <a href="#" class="latest-post-img">
-                        <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/poliklinik.jpg" alt="img">
-                    </a>
-                </div>
-                <div class="post-body">
-                    <h4 class="post-title">
-                        <a href="#" class="d-inline-block">LAYANAN UNGGULAN</a>
-                    </h4>
-
-                    <span>kami memilki layanan unggulan yang dapat memenuhi kebutuhan pasien kami</span>
-
-                </div>
-                <a href="" class="btn btn-primary">Selengkapnya</a>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-                <div class="latest-post-media">
-                    <a href="#" class="latest-post-img">
+                    <a href="/services/fasilitas-layanan" class="latest-post-img">
                         <img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/layanan/IGD.jpg" alt="img">
                     </a>
                 </div>
                 <div class="post-body">
                     <h4 class="post-title">
-                        <a href="#" class="d-inline-block">FASILITAS LAYANAN</a>
+                        <a href="/services/fasilitas-layanan" class="d-inline-block">FASILITAS LAYANAN</a>
                     </h4>
 
                     <span>RS Graha Hermine menyediakan fasilitas layanan yang lengkap dan berstandar international</span>
 
                 </div>
-                <a href="" class="btn btn-primary">Selengkapnya</a>
+                <a href="/services/fasilitas-layanan" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
     </div>

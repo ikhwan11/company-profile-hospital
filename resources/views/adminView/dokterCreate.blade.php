@@ -39,7 +39,7 @@
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-select">
                     <option value="Laki-Laki" @if (old('jenis_kelamin')=='Laki-Laki' ) selected="selected" @endif>Laki-Laki</option>
-                    <option value="Perempuan" @if (old('jenis_kelamin')=='Perempuan' ) selected="selected" @endif>Perempuan</option>\
+                    <option value="Perempuan" @if (old('jenis_kelamin')=='Perempuan' ) selected="selected" @endif>Perempuan</option>
                 </select>
             </div>
             <div class="mb-3 col-md-6">

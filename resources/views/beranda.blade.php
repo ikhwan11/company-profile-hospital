@@ -77,31 +77,13 @@ $latestVideo = $result['items'][0]['id']['videoId'];
     </div><!-- Container end -->
 </section><!-- Action end -->
 
-<!-- <section id="ts-features" class="ts-features pb-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <div class="ts-service-box">
-                    <div class="ts-service-image-wrapper">
-                        <img loading="lazy" class="w-100" src="Template/images/services/service1.jpg" alt="service-image">
-                    </div>
-                    <div class="d-flex">
-                        <div class="ts-service-box-img">
-                            <img loading="lazy" src="Template/images/icon-image/service-icon1.png" alt="service-icon" />
-                        </div>
-                        <div class="ts-service-info">
-                            <h3 class="service-box-title"><a href="service-single.html">Profil Dokter Kami</a></h3>
-                            <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                            <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i>Info Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="social" id="social">
+    <div class="row text-center">
+        <div class="col-12">
+            <h2 class="section-title">RS Graha Hermine</h2>
+            <h3 class="section-sub-title">Aktivitas Terbaru</h3>
         </div>
     </div>
-</section> -->
-
-<section class="social" id="social">
     <div class="row ml-3 mr-3">
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
@@ -263,77 +245,53 @@ $latestVideo = $result['items'][0]['id']['videoId'];
 
 <section class="content">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="column-title">Apa kata Pasien kami?</h3>
-
-                <div id="testimonial-slide" class="testimonial-slide">
-                    <!-- bagian testimonial -->
-                    <div class="item">
-                        <div class="quote-item">
-                            <span class="quote-text">
-                                saya dulunya sakit parah, namun setelah berobat ke RS Graha Hermine keadaan saya mulai membaik dan Alhamdulillah sekarang sudah bisa beraktivitas normal lagi
-                            </span>
-
-                            <div class="quote-item-footer">
-                                <img loading="lazy" class="testimonial-thumb" src="Template/images/clients/testimonial1.png" alt="testimonial">
-                                <div class="quote-item-info">
-                                    <h3 class="quote-author">Gabriel Denis</h3>
-                                    <span class="quote-subtext">Pasien Dr. Mulyadi</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h2 class="section-title">RS Graha Hermine</h2>
+                <h3 class="section-sub-title">Partner kami</h3>
+            </div>
+        </div>
+        <div class="row all-clients">
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client1.png" alt="clients-logo" /></a>
+                </figure>
             </div>
 
-            <div class="col-lg-6 mt-5 mt-lg-0">
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client2.png" alt="clients-logo" /></a>
+                </figure>
+            </div>
 
-                <h3 class="column-title">Partnership</h3>
-
-                <div class="row all-clients">
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client1.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 1 end -->
-
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client2.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 2 end -->
-
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client3.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 3 end -->
-
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client4.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 4 end -->
-
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client5.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 5 end -->
-
-                    <div class="col-sm-4 col-6">
-                        <figure class="clients-logo">
-                            <a href="#!"><img loading="lazy" class="img-fluid" src="Template/images/clients/client6.png" alt="clients-logo" /></a>
-                        </figure>
-                    </div><!-- Client 6 end -->
-
-                </div><!-- Clients row end -->
-
-            </div><!-- Col end -->
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client3.png" alt="clients-logo" /></a>
+                </figure>
+            </div>
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client4.png" alt="clients-logo" /></a>
+                </figure>
+            </div>
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client5.png" alt="clients-logo" /></a>
+                </figure>
+            </div>
+            <div class="col-sm-2 col-6">
+                <figure class="clients-logo">
+                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client6.png" alt="clients-logo" /></a>
+                </figure>
+            </div>
 
         </div>
-        <!--/ Content row end -->
+
+        <div class="col-12">
+            <div class="general-btn text-center">
+                <a class="btn btn-primary" href="#">Selengkapnya</a>
+            </div>
+        </div>
     </div>
     <!--/ Container end -->
 </section><!-- Content end -->
@@ -401,5 +359,6 @@ $latestVideo = $result['items'][0]['id']['videoId'];
     <!--/ Container end -->
 </section>
 <!--/ News end -->
+
 
 @endsection
