@@ -15,6 +15,7 @@ use App\Models\PostCategory;
 use Illuminate\Database\Seeder;
 use App\Models\Fasilitas_Layanan;
 use App\Models\Layanan_poliklinik;
+use App\Models\Partnership;
 
 class DatabaseSeeder extends Seeder
 {
@@ -236,6 +237,68 @@ class DatabaseSeeder extends Seeder
             'image' => 'post-images/ibLCRLsoqnAoaHvaX5tRkgZy7AUzGws4oNxYG3yb.jpg',
             'excerpt' => 'Warga di Perumahan Botania Garden, Batam Center, Kota Batam, Kepulauan Riau, riuh. Pasalnya, sudah dua hari air di kawasan Botania dan sekitarnya mati total.Air mati sejak Sabtu (21/1/2023) dini hari....',
             'body' => '<div>Warga di Perumahan Botania Garden, Batam Center, Kota Batam, Kepulauan Riau, riuh. Pasalnya, sudah dua hari air di kawasan Botania dan sekitarnya mati total.<br><br>Air mati sejak <strong>Sabtu (21/1/2023)</strong> dini hari. Tepatnya sekitarnya pukul 05.00 WIB. Kabarnya kejadian serupa terjadi se-Kecamatan Nongsa.<br><br>"<em>Iya, udah dari kemarin air mati</em>" ujar salah seorang warga sekitar, Ari, <strong>Minggu (22/1/2023)</strong>.<br><br>Warga terpaksa antre membeli air galon untuk kebutuhan harian seperti mandi, mencuci dan lain sebagainya.<br><br>"<em>Kita aja di sini rata-rata sepuluh galon, itupun kadang bisa lebih,</em>" katanya.<br><br>Tak hanya kebutuhan rumahan, masjid pun juga terdampak. Dimana air untuk berwudhu pun kering.<br><br>"<em>Tangki masjid itu udah kosong. Jadi untuk salat pun masyarakat susah,</em>" kata Ari.<br><br>Ia harap PT Moya segera berbenah. Setidaknya ada langkah antisipatif dari penyedia air bersih agar masyarakat tak semakin kesusahan. </div>',
+        ]);
+
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => 'CT-SCAN 128 Slices',
+            'kategori' => 'Fasilitas Layanan Unggulan',
+            'slug' => 'ct-scan-128-slices',
+            'image' => 'fasilitas-images/AljLuim7zdpFpBgXkcjTpHVGh3GSPO04QhClMZMw.jpg',
+            'ket' => '<div>Berteknologi internasional, CT scan atau computerized tomography scan adalah prosedur pemeriksaan medis yang menggunakan kombinasi teknologi sinar-X dan sistem komputer khusus untuk menghasilkan gambar organ, tulang, dan jaringan lunak di dalam tubuh</div>',
+        ]);
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => 'ICU (intensive Care Unit)',
+            'kategori' => 'Fasilitas Layanan Kesehatan',
+            'slug' => 'icu-(intensive-care-unit)',
+            'image' => 'fasilitas-images/7cgTPBKozV3HAxWeYpuZZdyYJp3xg25NTdpezr6g.jpg',
+            'ket' => '<div>Ruang ICU (intensive care unit) adalah ruangan khusus yang disediakan rumah sakit untuk merawat pasien dengan kondisi yang membutuhkan pengawasan ketat. Ruangan ini dilengkapi dengan peralatan medis khusus yang digunakan untuk menunjang proses pengobatan dan pemulihan pasien.</div>',
+        ]);
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => 'IGD & PONEK 24 jam',
+            'kategori' => 'Fasilitas Layanan Kesehatan',
+            'slug' => 'igd-&-ponek-24-jam',
+            'image' => 'fasilitas-images/sXbyjfCEQtD9nGq0RzPGvW9s6VwuRbnlNRR033L1.jpg',
+            'ket' => '<div>Instalasi Gawat Darurat (IGD) adalah unit pelayan di rumah sakit yang memberikan pelayanan pertama pada pasien dengan ancaman kematian dan kecacatan secara terpadu dengan melibatkan berbagai multidisiplin.</div>',
+        ]);
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => 'Laboratorium',
+            'kategori' => 'Fasilitas Penunjang Medis',
+            'slug' => 'laboratorium',
+            'image' => 'fasilitas-images/8tSDggn0XHwBkzhCHmLzz82xPh0kg6tMmdRgIEWf.jpg',
+            'ket' => '<div>menerapkan konsep laboratorium terpadu sehingga memiliki laboratorium patologi klinik, patologi anatomi, mikrobiologi, parasitologi, biomolekuler, dan bank darah. Semua unit tersebut berada dalam area bersama yang berdampingan satu sama lain.</div>',
+        ]);
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => 'Radiologi',
+            'kategori' => 'Fasilitas Penunjang Medis',
+            'slug' => 'radiologi',
+            'image' => 'fasilitas-images/dNyygNfc0qrfnVvnWaTogf4FNTSuONCH3uIT73Re.jpg',
+            'ket' => '<div>Radiologi adalah bagian dari ilmu kedokteran yang mempelajari tentang teknologi pencitraan, baik gelombang elektromagnetik maupun gelombang mekanik guna memindai bagian dalam tubuh manusia untuk mendeteksi suatu penyakit.</div>',
+        ]);
+
+        // partner
+        Partnership::create([
+            'nama_partner' => 'Bank BNI',
+            'kategori' => 'partner-logos/X3a4ILyQpnA3dwpkfqjs9zd6qIYZj2XHu1tGDTen.png',
+        ]);
+        Partnership::create([
+            'nama_partner' => 'BPJS kesehatan',
+            'kategori' => 'partner-logos/zTAEcqLxA3u7v4pOmSkYaiRwDjtPMcGYUr8PtaiW.png',
+        ]);
+        Partnership::create([
+            'nama_partner' => 'Jasa Raharja',
+            'kategori' => 'partner-logos/K2PXj1DITIa6RQ9CVZXaEFTIK9KDyQIcZdLmO2OU.png',
+        ]);
+        Partnership::create([
+            'nama_partner' => 'Kimia Farma',
+            'kategori' => 'partner-logos/KJxtTsIA2BnsFyR9b4Zo9fFpNrBidmF8VvN2casQ.png',
+        ]);
+        Partnership::create([
+            'nama_partner' => 'RS Awal Bros Batam',
+            'kategori' => 'partner-logos/fv8F7cCFOOnrphzl8rR7PASqPnUJRtKFzi9XW8oO.png',
+        ]);
+        Partnership::create([
+            'nama_partner' => 'Manulife',
+            'kategori' => 'partner-logos/RXnv2dorKa23Jp1A2xGl2C38NiY5vcsmwFBsWpnw.png',
         ]);
     }
 }

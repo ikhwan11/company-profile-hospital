@@ -102,7 +102,7 @@
                                             <li><a href="/dokter/profil">Profil Dokter</a></li>
                                             <li><a href="/galeri">Galeri</a></li>
                                             <li><a href="/karir">Karir</a></li>
-                                            <li><a href="#">Our Partners</a></li>
+                                            <li><a href="/partnership">Our Partners</a></li>
                                         </ul>
                                     </li>
 
@@ -131,17 +131,17 @@
 
         <!-- floating wa -->
         <div class="floating-container">
-            <div class="floating-button text-dark">+</div>
+            <div class="floating-button text-dark" title="Hubungi Kami">+</div>
             <div class="element-container">
 
                 <span class="float-element tooltip-left">
-                    <a href="https://www.facebook.com/rumahsakitgrahahermine"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Linktree"><i class="fas fa-link"></i></a>
                 </span>
                 <span class="float-element">
-                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </span>
                 <span class="float-element">
-                    <a href="https://www.instagram.com/rs_grahahermine/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </span>
             </div>
         </div>
@@ -160,10 +160,10 @@
                             <p class="text-white">Temukan kami:</p>
                             <div class="footer-social">
                                 <ul>
-                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a></li>
-                                    <li><a href="#" aria-label="Youtube"><i class="fab fa-youtube text-white"></i></a>
+                                    <li><a href="https://www.facebook.com/rumahsakitgrahahermine" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@RumahSakitGrahaHermine" aria-label="Youtube"><i class="fab fa-youtube text-white"></i></a>
                                     </li>
-                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a></li>
+                                    <li><a href="https://www.instagram.com/rs_grahahermine/" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a></li>
                                 </ul>
                             </div><!-- Footer social end -->
                         </div><!-- Col end -->

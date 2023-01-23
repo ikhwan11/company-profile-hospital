@@ -64,7 +64,7 @@
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
-                                    <th scope="col">Judul Post</th>
+                                    <th scope="col" class="col-4">Judul Post</th>
                                     <th scope="col">Kategori Post</th>
                                     <th scope="col">Penulis</th>
                                     <th scope="col">tanggal Publish</th>

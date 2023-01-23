@@ -15,6 +15,7 @@ use App\Models\Lowongan;
 use App\Models\Galeri;
 use App\Models\Layanan_poliklinik;
 use App\Models\LayananImage;
+use App\Models\Partnership;
 
 class MainController extends Controller
 {
@@ -25,6 +26,7 @@ class MainController extends Controller
             'posts' => Blog::latest()->paginate(3),
             'banners' => Banner::all(),
             'galeris' => Galeri::paginate(6),
+            'partnership' => Partnership::paginate(6),
             'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }
@@ -166,6 +168,15 @@ class MainController extends Controller
         return view('galeri/galeriGuest', [
             'tittle' => 'Galeri',
             'galeris' => Galeri::all(),
+            'lyn' => Layanan_poliklinik::paginate(5)
+        ]);
+    }
+
+    public function partnerIndex()
+    {
+        return view('partnership/partnership', [
+            'tittle' => 'Our Partnership',
+            'partnership' => Partnership::all(),
             'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }

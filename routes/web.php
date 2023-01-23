@@ -21,6 +21,7 @@ use App\Http\Controllers\LayananDetailController;
 use App\Http\Controllers\FasilitasLayananController;
 use App\Http\Controllers\LayananUnggulanController;
 use App\Http\Controllers\LayananPoliklinikController;
+use App\Http\Controllers\PartnershipController;
 
 
 
@@ -55,6 +56,9 @@ Route::post('/karir', [MainController::class, 'store'])->middleware('guest');
 
 // galeri guest
 Route::get('/galeri', [MainController::class, 'galeriIndex'])->middleware('guest');
+
+// partnership
+Route::get('/partnership', [MainController::class, 'partnerIndex'])->middleware('guest');
 
 // <-- Bagian Admin -->
 
@@ -116,3 +120,6 @@ Route::resource('/dashboard/galeri', GaleriController::class)->middleware('auth'
 // e-library
 Route::resource('/dashboard/e-library', ElibraryController::class)->middleware('auth');
 Route::resource('/dashboard/e-library/folder', FolderController::class)->middleware('auth');
+
+// partnership
+Route::resource('/dashboard/partnership', PartnershipController::class)->middleware('auth');

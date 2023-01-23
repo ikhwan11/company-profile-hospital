@@ -130,7 +130,7 @@ $latestVideo = $result['items'][0]['id']['videoId'];
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Ruang inap yang nyaman dan bersih</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                        <p>Kebersihan dan kenyamanan pasien sangat diutamakan, karena lingkungan yang bersih memberikan banyak manfaat untuk kesehatan.</p>
                     </div>
                 </div><!-- Service 1 end -->
 
@@ -140,7 +140,7 @@ $latestVideo = $result['items'][0]['id']['videoId'];
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Fasilitas 24 jam</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                        <p>Pelayanan 24 jam kami berikan kepada pasien kami guna untuk tetap tanggap pada hal-hal yang darurat.</p>
                     </div>
                 </div><!-- Service 2 end -->
 
@@ -156,8 +156,8 @@ $latestVideo = $result['items'][0]['id']['videoId'];
                         <img loading="lazy" src="{{asset('Template')}}/images/icon-image/doctor-proff.png" alt="service-icon">
                     </div>
                     <div class="ts-service-box-info">
-                        <h3 class="service-box-title"><a href="#">Ditangani oleh ahli</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                        <h3 class="service-box-title"><a href="#">Ditangani oleh Dokter ahli</a></h3>
+                        <p>Memiliki dokter-dokter spesialis yang telah berpengalaman di bidangnya</p>
                     </div>
                 </div><!-- Service 4 end -->
 
@@ -167,7 +167,7 @@ $latestVideo = $result['items'][0]['id']['videoId'];
                     </div>
                     <div class="ts-service-box-info">
                         <h3 class="service-box-title"><a href="#">Peralatan Medis lengkap</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                        <p>Memiliki peralatan medis yang lengkap dan memadai serta berteknologi tinggi guna untuk menunjang kebutuhan pasien.</p>
                     </div>
                 </div><!-- Service 5 end -->
             </div><!-- Col end -->
@@ -190,24 +190,6 @@ $latestVideo = $result['items'][0]['id']['videoId'];
         <!-- galeri -->
         <div class="row">
             <div class="col-12">
-                <!-- <div class="shuffle-btn-group">
-                    <label class="active" for="all">
-                        <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Show All
-                    </label>
-                    <label for="Poliklinik">
-                        <input type="radio" name="shuffle-filter" id="Poliklinik" value="Poliklinik">Poliklinik
-                    </label>
-                    <label for="igd">
-                        <input type="radio" name="shuffle-filter" id="igd" value="igd">Instalasi gawat Darurat (IGD)
-                    </label>
-                    <label for="rawat-inap">
-                        <input type="radio" name="shuffle-filter" id="rawat-inap" value="rawat-inap">Layanan Rawat Inap
-                    </label>
-                    <label for="ibu-anak">
-                        <input type="radio" name="shuffle-filter" id="ibu-anak" value="ibu-anak">layanan Ibu dan Anak
-                    </label>
-                </div> -->
-
 
                 <div class="row shuffle-wrapper">
                     <div class="col-1 shuffle-sizer"></div>
@@ -252,44 +234,18 @@ $latestVideo = $result['items'][0]['id']['videoId'];
             </div>
         </div>
         <div class="row all-clients">
+            @foreach($partnership as $partner)
             <div class="col-sm-2 col-6">
                 <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client1.png" alt="clients-logo" /></a>
+                    <a href="#"><img loading="lazy" class="img-fluid" src="{{asset('storage/'.$partner->image)}}" alt="clients-logo" title="{{$partner->nama_partner}}" /></a>
                 </figure>
             </div>
-
-            <div class="col-sm-2 col-6">
-                <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client2.png" alt="clients-logo" /></a>
-                </figure>
-            </div>
-
-            <div class="col-sm-2 col-6">
-                <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client3.png" alt="clients-logo" /></a>
-                </figure>
-            </div>
-            <div class="col-sm-2 col-6">
-                <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client4.png" alt="clients-logo" /></a>
-                </figure>
-            </div>
-            <div class="col-sm-2 col-6">
-                <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client5.png" alt="clients-logo" /></a>
-                </figure>
-            </div>
-            <div class="col-sm-2 col-6">
-                <figure class="clients-logo">
-                    <a href="#!"><img loading="lazy" class="img-fluid" src="{{asset('Template')}}/images/clients/client6.png" alt="clients-logo" /></a>
-                </figure>
-            </div>
-
+            @endforeach
         </div>
 
         <div class="col-12">
             <div class="general-btn text-center">
-                <a class="btn btn-primary" href="#">Selengkapnya</a>
+                <a class="btn btn-primary" href="/partnership">Selengkapnya</a>
             </div>
         </div>
     </div>
