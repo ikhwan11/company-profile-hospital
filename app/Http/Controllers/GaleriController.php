@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galeri;
+use App\Models\KategoriGaleri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,7 +21,8 @@ class GaleriController extends Controller
     public function create()
     {
         return view('adminView/galeriCreate', [
-            'tittle' => 'Media'
+            'tittle' => 'Media',
+            'kategories' => KategoriGaleri::all()
         ]);
     }
 
@@ -31,6 +33,7 @@ class GaleriController extends Controller
             'title_galeri' => 'required|max:255',
             'slug' => 'required',
             'keterangan' => 'required',
+            'kategori_id' => 'required',
             'image' => 'required|image|file|max:5120'
         ]);
 

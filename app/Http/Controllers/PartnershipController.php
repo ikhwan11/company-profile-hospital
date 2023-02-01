@@ -30,7 +30,7 @@ class PartnershipController extends Controller
     {
         $validatedData = $request->validate([
             'nama_partner' => 'required',
-            'image' => 'required|image|file|max:1204',
+            'image' => 'required|image|file|max:5120',
         ]);
 
         if ($request->file('image')) {

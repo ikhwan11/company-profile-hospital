@@ -36,7 +36,7 @@ class BlogController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:blogs',
             'category_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
             'body' => 'required',
         ]);
 
@@ -75,7 +75,7 @@ class BlogController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
             'body' => 'required',
         ];
 

@@ -15,6 +15,7 @@
 
     <div class="col">
         <a href="/dashboard/galeri/create" class="btn btn-primary text-white">Tambah Foto <i class="bi bi-arrow-right-short"></i></a>
+        <a href="/dashboard/galeri-kategori/create" class="btn btn-warning text-white">Tambah Kategori Foto<i class="bi bi-arrow-right-short"></i></a>
 
     </div>
 
@@ -37,6 +38,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Gambar</th>
+                                <th scope="col">Kategori</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Tanggal di buat</th>
                                 <th scope="col">Aksi</th>
@@ -46,6 +48,7 @@
                             @foreach($galeri as $data)
                             <tr class="align-middle">
                                 <td><img src="{{ asset('storage/'.$data->image) }}" alt="" width="200"></td>
+                                <td>{{$data->kategori->galeri_kategori}}</td>
                                 <td>{{$data->title_galeri}}</td>
                                 <td>{{$data->created_at}}</td>
                                 <td>

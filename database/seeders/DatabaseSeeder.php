@@ -14,6 +14,7 @@ use App\Models\LayananImage;
 use App\Models\PostCategory;
 use Illuminate\Database\Seeder;
 use App\Models\Fasilitas_Layanan;
+use App\Models\KategoriGaleri;
 use App\Models\Layanan_poliklinik;
 use App\Models\Partnership;
 
@@ -161,39 +162,59 @@ class DatabaseSeeder extends Seeder
         // gallery
         Galeri::create([
             'title_galeri' => 'pemeriksaan anak',
+            'kategori_id' => '4',
             'slug' => 'pemeriksaan-anak',
-            'keterangan' => '<div>pemeriksaan anak</div>',
-            'image' => 'galeri-images/mWHkRJtnIBUIpkK1zSTsumw3HkVj5ofAe0NosMJu.jpg',
+            'keterangan' => '<div>melakukan pengecekan berkala terhadap pasien yang kurang mampu</div>',
+            'image' => 'galeri-images/1k58lOfblUIP947Y6ubfIYeXfmsxEPf4DsjMrEGt.jpg',
         ]);
         Galeri::create([
             'title_galeri' => 'Foto Bersama Pelatihan BTCLS',
+            'kategori_id' => '1',
             'slug' => 'foto-bersama-pelatihan-btcls',
-            'keterangan' => '<div>Foto Bersama Pelatihan BTCLS</div>',
-            'image' => 'galeri-images/L4lLif3LazDr4RHO4eQyfbvIx2xsgud7Zism9sQf.jpg',
-        ]);
-        Galeri::create([
-            'title_galeri' => 'Test Antigen Gratis',
-            'slug' => 'test-antigen-gratis',
-            'keterangan' => '<div>Test Antigen Gratis</div>',
-            'image' => 'galeri-images/IsZw33FzKoB9h67oZcE2VsxvLsHJgSTBpCUGR3Jt.jpg',
-        ]);
-        Galeri::create([
-            'title_galeri' => 'Komp pengungisan bencana alam',
-            'slug' => 'komp-pengungisan-bencana-alam',
-            'keterangan' => '<div>Komp pengungisan bencana alam</div>',
-            'image' => 'galeri-images/nkqqeUfuPrcBu2OH1lbpVvIUJZK2aMeDDxyIh4Ut.jpg',
+            'keterangan' => '<div>Pelatihan BTCLS guna meningkatkan kualitas tenaga kesehatan di RS Graha Hermine</div>',
+            'image' => 'galeri-images/ZWfW4WmYzQfVsiRXguM8CA7uk2mM4tkj2EwdiOW1.jpg',
         ]);
         Galeri::create([
             'title_galeri' => 'Temu Direksi',
+            'kategori_id' => '2',
             'slug' => 'temu-direksi',
-            'keterangan' => '<div>Temu Direksi</div>',
-            'image' => 'galeri-images/wwj9xK7QDTT1rsJFJqVgooMCRuPHKtwepevmiMwh.jpg',
+            'keterangan' => '<div>Temu Direksi membahas tentang bagaimana langkah RS Graha Hermine ikut andil dalam penganggulangan covid-19</div>',
+            'image' => 'galeri-images/Xna720VZiGhpWeBo3a2MclulgofKLDNuv30dhNy2.jpg',
         ]);
         Galeri::create([
-            'title_galeri' => 'MoU dengan PT. Maju MUndur',
+            'title_galeri' => 'Test Antigen Gratis',
+            'kategori_id' => '2',
+            'slug' => 'test-antigen-gratis',
+            'keterangan' => '<div>melakukan test antigen secara gratis kepada masyarakat yang membutuhkan</div>',
+            'image' => 'galeri-images/okiqIVHCuiIAvjpCy9XfWVGHPERbQRK1lrc9ryNR.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'Vaksin gratis kepada masyarakat',
+            'kategori_id' => '4',
+            'slug' => 'vaksin-gratis-kepada-masyarakat',
+            'keterangan' => '<div>Program Vaksin Gratis demin terciptanya lingkungan yang nyaman bebas virus di sekitar kita</div>',
+            'image' => 'galeri-images/GbECTzFPbT6ULxvdYxz5IAoqvzVierrZEtNUq4pt.jpg',
+        ]);
+        Galeri::create([
+            'title_galeri' => 'MoU dengan PT. Maju Mundur',
+            'kategori_id' => '1',
             'slug' => 'mou-dengan-pt.-maju-mundur',
-            'keterangan' => '<div>MoU dengan PT. Maju MUndur</div>',
-            'image' => 'galeri-images/0NKDYeRHql46Y968ihyqHTxpYAZeMTXm7U1J4uqg.jpg',
+            'keterangan' => '<div>tanda tangan kerjasama MoU dengan PT maju mundur Batam</div>',
+            'image' => 'galeri-images/XkUWI6qZtwzGx2lNmQUSgJmUaL7VHh7OUobjyBpn.jpg',
+        ]);
+
+        // gallery Categories
+        KategoriGaleri::create([
+            'galeri_kategori' => 'Pelatihan BTCLS',
+        ]);
+        KategoriGaleri::create([
+            'galeri_kategori' => 'Penanggulangan Covid-19',
+        ]);
+        KategoriGaleri::create([
+            'galeri_kategori' => 'Vaksin Booster',
+        ]);
+        KategoriGaleri::create([
+            'galeri_kategori' => 'Pengabdian Masyarakat',
         ]);
 
         // kategori post
@@ -278,27 +299,27 @@ class DatabaseSeeder extends Seeder
         // partner
         Partnership::create([
             'nama_partner' => 'Bank BNI',
-            'kategori' => 'partner-logos/X3a4ILyQpnA3dwpkfqjs9zd6qIYZj2XHu1tGDTen.png',
+            'image' => 'partner-logos/X3a4ILyQpnA3dwpkfqjs9zd6qIYZj2XHu1tGDTen.png',
         ]);
         Partnership::create([
             'nama_partner' => 'BPJS kesehatan',
-            'kategori' => 'partner-logos/zTAEcqLxA3u7v4pOmSkYaiRwDjtPMcGYUr8PtaiW.png',
+            'image' => 'partner-logos/zTAEcqLxA3u7v4pOmSkYaiRwDjtPMcGYUr8PtaiW.png',
         ]);
         Partnership::create([
             'nama_partner' => 'Jasa Raharja',
-            'kategori' => 'partner-logos/K2PXj1DITIa6RQ9CVZXaEFTIK9KDyQIcZdLmO2OU.png',
+            'image' => 'partner-logos/K2PXj1DITIa6RQ9CVZXaEFTIK9KDyQIcZdLmO2OU.png',
         ]);
         Partnership::create([
             'nama_partner' => 'Kimia Farma',
-            'kategori' => 'partner-logos/KJxtTsIA2BnsFyR9b4Zo9fFpNrBidmF8VvN2casQ.png',
+            'image' => 'partner-logos/KJxtTsIA2BnsFyR9b4Zo9fFpNrBidmF8VvN2casQ.png',
         ]);
         Partnership::create([
             'nama_partner' => 'RS Awal Bros Batam',
-            'kategori' => 'partner-logos/fv8F7cCFOOnrphzl8rR7PASqPnUJRtKFzi9XW8oO.png',
+            'image' => 'partner-logos/fv8F7cCFOOnrphzl8rR7PASqPnUJRtKFzi9XW8oO.png',
         ]);
         Partnership::create([
             'nama_partner' => 'Manulife',
-            'kategori' => 'partner-logos/RXnv2dorKa23Jp1A2xGl2C38NiY5vcsmwFBsWpnw.png',
+            'image' => 'partner-logos/28btBzEWtmiRI8nEJwFXFRI83GVNeDs2yP4Gcfpz.png',
         ]);
     }
 }

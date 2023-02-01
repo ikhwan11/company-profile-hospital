@@ -135,13 +135,13 @@
             <div class="element-container">
 
                 <span class="float-element tooltip-left">
-                    <a href="#" title="Linktree"><i class="fas fa-link"></i></a>
+                    <a href="https://linktr.ee/grahahermine" title="Linktree"><i class="fas fa-link"></i></a>
                 </span>
                 <span class="float-element">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=6282386828066" title="Pendaftaran Online"><i class="fab fa-whatsapp"></i></a>
                 </span>
                 <span class="float-element">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=6285274603611" title="Pendaftaran Online"><i class="fab fa-whatsapp"></i></a>
                 </span>
             </div>
         </div>

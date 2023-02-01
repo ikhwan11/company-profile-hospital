@@ -37,6 +37,19 @@
             @enderror
         </div>
 
+        <div class="mb-3 col-md-6">
+            <label for="kategori" class="form-label">kategori</label>
+            <select name="kategori_id" class="form-select">
+                @foreach ($kategories as $kategori)
+                @if(old('kategori_id') == $kategori->id)
+                <option value="{{$kategori->id}}" selected>{{ $kategori->galeri_kategori }}</option>
+                @else
+                <option value="{{$kategori->id}}">{{ $kategori->galeri_kategori }}</option>
+                @endif
+                @endforeach
+            </select>
+        </div>
+
         <div class="mb-3">
             <label for="image" class="form-label">Pilih Foto</label>
             <img class="img-preview img-fluid mb-3 col-sm-5">

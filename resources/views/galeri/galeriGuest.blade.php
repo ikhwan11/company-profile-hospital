@@ -14,26 +14,21 @@
 
         <!-- galeri -->
         <div class="row">
+
+            <div class="col-md-6">
+                <h4 class="widget-title">Filter Foto Berdasarkan</h4>
+                <form action="/galeri">
+                    <div class="input-group mb-3">
+                        <select name="search" class="form-control">
+                            @foreach($kategories as $kategori)
+                            <option value="{{ $kategori->id }}">{{ $kategori->galeri_kategori }}</option>
+                            @endforeach
+                        </select>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
             <div class="col-12">
-                <!-- <div class="shuffle-btn-group">
-                    <label class="active" for="all">
-                        <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Show All
-                    </label>
-                    <label for="Poliklinik">
-                        <input type="radio" name="shuffle-filter" id="Poliklinik" value="Poliklinik">Poliklinik
-                    </label>
-                    <label for="igd">
-                        <input type="radio" name="shuffle-filter" id="igd" value="igd">Instalasi gawat Darurat (IGD)
-                    </label>
-                    <label for="rawat-inap">
-                        <input type="radio" name="shuffle-filter" id="rawat-inap" value="rawat-inap">Layanan Rawat Inap
-                    </label>
-                    <label for="ibu-anak">
-                        <input type="radio" name="shuffle-filter" id="ibu-anak" value="ibu-anak">layanan Ibu dan Anak
-                    </label>
-                </div> -->
-
-
                 <div class="row shuffle-wrapper">
                     <div class="col-1 shuffle-sizer"></div>
                     @foreach($galeris as $galeri)
@@ -48,6 +43,7 @@
                                 <div class="project-item-info-content">
                                     <p class="project-item-title text-white">{{ $galeri->title_galeri }}</a>
                                     </p>
+                                    <span class="text-white"><small>{!! $galeri->keterangan !!}</small></span>
                                 </div>
                             </div>
                         </div>
@@ -58,6 +54,9 @@
             </div>
 
         </div><!-- Content row end -->
+        <div class="d-flex justify-content-center mt-4">
+            {{$galeris->links()}}
+        </div>
     </div>
     <!--/ Container end -->
 </section><!-- Project area end -->

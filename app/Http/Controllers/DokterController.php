@@ -41,7 +41,7 @@ class DokterController extends Controller
             'no_hp' => 'required',
             'email' => 'required|email|unique:dokters',
             'alamat_domisili' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
             'riwayat' => 'required',
         ]);
 
@@ -87,7 +87,7 @@ class DokterController extends Controller
             'no_hp' => 'required',
             'email' => 'required|email',
             'alamat_domisili' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
             'riwayat' => 'required'
         ]);
 

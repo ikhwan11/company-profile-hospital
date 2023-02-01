@@ -22,6 +22,7 @@ use App\Http\Controllers\FasilitasLayananController;
 use App\Http\Controllers\LayananUnggulanController;
 use App\Http\Controllers\LayananPoliklinikController;
 use App\Http\Controllers\PartnershipController;
+use App\Http\Controllers\KategoriGaleriController;
 
 
 
@@ -116,6 +117,7 @@ Route::get('/dashboard/layanan/detail/{layanan_poliklinik}', [LayananDetailContr
 
 // galeri
 Route::resource('/dashboard/galeri', GaleriController::class)->middleware('auth');
+Route::resource('/dashboard/galeri-kategori', KategoriGaleriController::class)->middleware('auth');
 
 // e-library
 Route::resource('/dashboard/e-library', ElibraryController::class)->middleware('auth');

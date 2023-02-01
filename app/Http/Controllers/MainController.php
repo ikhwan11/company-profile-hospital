@@ -16,6 +16,7 @@ use App\Models\Galeri;
 use App\Models\Layanan_poliklinik;
 use App\Models\LayananImage;
 use App\Models\Partnership;
+use App\Models\KategoriGaleri;
 
 class MainController extends Controller
 {
@@ -167,7 +168,8 @@ class MainController extends Controller
     {
         return view('galeri/galeriGuest', [
             'tittle' => 'Galeri',
-            'galeris' => Galeri::all(),
+            'galeris' => Galeri::latest()->filter(request(['search']))->paginate(9)->withQueryString(),
+            'kategories' => KategoriGaleri::all(),
             'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }

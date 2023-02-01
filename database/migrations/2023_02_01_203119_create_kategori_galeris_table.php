@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galeris', function (Blueprint $table) {
+        Schema::create('kategori_galeris', function (Blueprint $table) {
             $table->id();
-            $table->string('title_galeri');
-            $table->foreignId('kategori_id');
-            $table->string('slug')->unique();
-            $table->text('keterangan');
-            $table->string('image');
+            $table->string('galeri_kategori');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeris');
+        Schema::dropIfExists('kategori_galeris');
     }
 };

@@ -205,6 +205,7 @@ $latestVideo = $result['items'][0]['id']['videoId'];
                                 <div class="project-item-info-content">
                                     <p class="project-item-title text-white">{{ $galeri->title_galeri }}</a>
                                     </p>
+                                    <span class="text-white"><small>{!! $galeri->keterangan !!}</small></span>
                                 </div>
                             </div>
                         </div>
