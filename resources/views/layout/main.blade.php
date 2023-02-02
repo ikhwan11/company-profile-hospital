@@ -53,9 +53,7 @@
                             <div class="col-lg-8 col-md-12">
                                 <ul class="top-info text-center text-md-left mt-2">
                                     <li>
-                                        <a href="https://api.whatsapp.com/send?phone=6282386828066" class="info-text">
-                                            <h6 class="text-white">Pendaftaran Online</h6>
-                                        </a>
+                                        <p class="text-white"><i class="fas fa-headset"></i> Customer Care | <strong>(0778) 363 318</strong> </p>
                                     </li>
                                 </ul>
                             </div>
@@ -131,7 +129,7 @@
 
         <!-- floating wa -->
         <div class="floating-container">
-            <div class="floating-button text-dark" title="Hubungi Kami">+</div>
+            <img src="{{asset('Template')}}/images/icon-customer.png" class="floating-button text-dark" title="Hubungi Kami">
             <div class="element-container">
 
                 <span class="float-element tooltip-left">
@@ -141,7 +139,7 @@
                     <a href="https://api.whatsapp.com/send?phone=6282386828066" title="Pendaftaran Online"><i class="fab fa-whatsapp"></i></a>
                 </span>
                 <span class="float-element">
-                    <a href="https://api.whatsapp.com/send?phone=6285274603611" title="Pendaftaran Online"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=6285274603611" title="Kritik & Saran"><i class="fab fa-whatsapp"></i></a>
                 </span>
             </div>
         </div>
