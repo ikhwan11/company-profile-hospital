@@ -163,3 +163,105 @@ html, body {
   opacity: 1;
 
 }
+
+/* linktree */
+#tooltipText-linktree {
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #4267B2;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0px 15px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#tooltipText-linktree::before{
+  content:" ";
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  transform: translateX(-50%);
+  border-left: 30px solid #4267B2;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#tooltip-linktree:hover #tooltipText-linktree{
+  left: -120%;
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+
+}
+
+/* pendaftaran */
+#tooltipText-pendaftaran {
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #25D366;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0px 15px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#tooltipText-pendaftaran::before{
+  content:" ";
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  transform: translateX(-50%);
+  border-left: 30px solid #25D366;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#tooltip-pendaftaran:hover #tooltipText-pendaftaran{
+  left: -190%;
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+
+}
+
+/* kritik */
+#tooltipText-kritik {
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #25D366;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0px 15px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#tooltipText-kritik::before{
+  content:" ";
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  transform: translateX(-50%);
+  border-left: 30px solid #25D366;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#tooltip-kritik:hover #tooltipText-kritik{
+  left: -160%;
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+
+}

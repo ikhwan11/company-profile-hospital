@@ -134,14 +134,17 @@
             <img src="{{asset('Template')}}/images/icon-customer.png" class="floating-button text-dark">
             <div class="element-container">
 
-                <span class="float-element tooltip-left">
-                    <a href="https://linktr.ee/grahahermine" title="Linktree"><i class="fas fa-link"></i></a>
+                <span class="float-element tooltip-left" id="tooltip-linktree">
+                    <a href="https://linktr.ee/grahahermine"><i class="fas fa-link"></i></a>
+                    <span id="tooltipText-linktree">Linktree</span>
                 </span>
-                <span class="float-element">
-                    <a href="https://api.whatsapp.com/send?phone=6282386828066" title="Pendaftaran Online"><i class="fab fa-whatsapp"></i></a>
+                <span class="float-element" id="tooltip-pendaftaran">
+                    <a href="https://api.whatsapp.com/send?phone=6282386828066"><i class="fab fa-whatsapp"></i></a>
+                    <span id="tooltipText-pendaftaran">Pendaftran Online</span>
                 </span>
-                <span class="float-element">
-                    <a href="https://api.whatsapp.com/send?phone=6285274603611" title="Kritik & Saran"><i class="fab fa-whatsapp"></i></a>
+                <span class="float-element" id="tooltip-kritik">
+                    <a href="https://api.whatsapp.com/send?phone=6285274603611"><i class="fab fa-whatsapp"></i></a>
+                    <span id="tooltipText-kritik">Kritik & Saran</span>
                 </span>
             </div>
             <span id="tooltipText">Hubungi kami</span>
