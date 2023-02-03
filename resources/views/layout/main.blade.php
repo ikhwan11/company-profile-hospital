@@ -127,9 +127,11 @@
 
         @yield('content')
 
+
         <!-- floating wa -->
-        <div class="floating-container">
-            <img src="{{asset('Template')}}/images/icon-customer.png" class="floating-button text-dark" title="Hubungi Kami">
+
+        <div class="floating-container" id="tooltip">
+            <img src="{{asset('Template')}}/images/icon-customer.png" class="floating-button text-dark">
             <div class="element-container">
 
                 <span class="float-element tooltip-left">
@@ -142,6 +144,7 @@
                     <a href="https://api.whatsapp.com/send?phone=6285274603611" title="Kritik & Saran"><i class="fab fa-whatsapp"></i></a>
                 </span>
             </div>
+            <span id="tooltipText">Hubungi kami</span>
         </div>
 
         <footer id="footer" class="footer">
@@ -215,6 +218,11 @@
 
         <!-- Javascript Files
   ================================================== -->
+        <!-- <script type="text/javascript">
+            window.onload = () => {
+                $('#onload').modal('show');
+            }
+        </script> -->
 
         <!-- initialize jQuery Library -->
         <script src="{{asset('Template')}}/plugins/jQuery/jquery.min.js"></script>

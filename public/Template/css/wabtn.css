@@ -54,7 +54,7 @@ html, body {
   height: 100px;
   bottom: 0;
   right: 0;
-  margin: 130px 10px;
+  margin: 100px 10px;
 }
 .floating-container:hover {
   height: 300px;
@@ -131,3 +131,35 @@ html, body {
   box-shadow: 0 20px 20px -10px rgba(37, 211, 102, 0.5);
 }
 
+#tooltipText {
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #F6EB14;
+  color: #000;
+  white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#tooltipText::before{
+  content:" ";
+  position: absolute;
+  left: 100%;
+  top: 5%;
+  transform: translateX(-50%);
+  border-left: 30px solid #F6EB14;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#tooltip:hover #tooltipText{
+  left: -60%;
+  bottom: 1%;
+  visibility: visible;
+  opacity: 1;
+
+}
