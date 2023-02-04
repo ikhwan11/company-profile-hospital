@@ -17,6 +17,7 @@ use App\Models\Fasilitas_Layanan;
 use App\Models\KategoriGaleri;
 use App\Models\Layanan_poliklinik;
 use App\Models\Partnership;
+use App\Models\YtLink;
 
 class DatabaseSeeder extends Seeder
 {
@@ -320,6 +321,11 @@ class DatabaseSeeder extends Seeder
         Partnership::create([
             'nama_partner' => 'Manulife',
             'image' => 'partner-logos/28btBzEWtmiRI8nEJwFXFRI83GVNeDs2yP4Gcfpz.png',
+        ]);
+
+        YtLink::create([
+            'title' => 'Pencegahan Hidrosefalus',
+            'embed_link' => 'https://www.youtube.com/embed/VGtIP0iQmcY',
         ]);
     }
 }
