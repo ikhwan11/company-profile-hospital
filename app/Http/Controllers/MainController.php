@@ -17,6 +17,7 @@ use App\Models\Layanan_poliklinik;
 use App\Models\LayananImage;
 use App\Models\Partnership;
 use App\Models\KategoriGaleri;
+use App\Models\YtLink;
 
 class MainController extends Controller
 {
@@ -28,6 +29,7 @@ class MainController extends Controller
             'banners' => Banner::all(),
             'galeris' => Galeri::paginate(6),
             'partnership' => Partnership::paginate(6),
+            'links' => YtLink::paginate(1),
             'lyn' => Layanan_poliklinik::paginate(5)
         ]);
     }

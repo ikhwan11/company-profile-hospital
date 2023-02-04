@@ -51,6 +51,44 @@ $bg = asset('Template');
     </div><!-- Container end -->
 </section><!-- Action end -->
 
+<section class="social" id="social">
+    <div class="row text-center">
+        <div class="col-12">
+            <h2 class="section-title">RS Graha Hermine</h2>
+            <h3 class="section-sub-title">Aktivitas Terbaru</h3>
+        </div>
+    </div>
+    <div class="row ml-3 mr-3">
+        @foreach($links as $link)
+        <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" width="960" height="540" src="{{$link->embed_link}}" title="YouTube video" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 960px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{asset('Template')}}/images/logo-ultah.png" class="img-fluid rounded-start mx-2 my-2">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title">{{$link->title}}</h4>
+                            <p class="card-text">RS. Graha Hermine | Batam
+                                Komp. Ruko Asih Raya, Blok B No. 9-15
+                                Jl. Letjend Suprapto, Buliang
+                                Kec. Batu Aji, Kota Batam
+                                Kepulauan Riau 29424
+                            <div class="g-ytsubscribe" data-channelid="UCrVa5dDtzD7ARnE3TqN4Wig" data-layout="default" data-count="default"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@RumahSakitGrahaHermine/featured" class="btn btn-primary">More Video</a>
+        </div>
+        @endforeach
+    </div>
+</section>
 
 <section id="ts-service-area" class="ts-service-area pb-0">
     <div class="container">

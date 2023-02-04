@@ -23,8 +23,7 @@ use App\Http\Controllers\LayananUnggulanController;
 use App\Http\Controllers\LayananPoliklinikController;
 use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\KategoriGaleriController;
-
-
+use App\Http\Controllers\YtLinkController;
 
 // halaman guest
 Route::get('/', [MainController::class, 'index'])->middleware('guest');
@@ -125,3 +124,6 @@ Route::resource('/dashboard/e-library/folder', FolderController::class)->middlew
 
 // partnership
 Route::resource('/dashboard/partnership', PartnershipController::class)->middleware('auth');
+
+// yt links
+Route::resource('/dashboard/yt', YtLinkController::class)->middleware('auth');

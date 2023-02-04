@@ -133,6 +133,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/dashboard/yt">
+                            <i class="bi bi-circle"></i><span>YouTube Link Videos</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/dashboard/galeri">
                             <i class="bi bi-circle"></i><span>Kelola Galeri</span>
                         </a>
