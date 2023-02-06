@@ -78,9 +78,8 @@ class DokterController extends Controller
 
     public function update(Request $request, Dokter $dokter)
     {
-        $validatedData = $request->validate([
+        $rules = ([
             'nama' => 'required|max:255',
-            'slug' => 'required|unique:dokters',
             'poliklinik_id' => 'required',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
@@ -90,6 +89,12 @@ class DokterController extends Controller
             'image' => 'image|file|max:5120',
             'riwayat' => 'required'
         ]);
+
+        if ($request->slug != $dokter->slug) {
+            $rules['slug'] = 'required|unique:dokters';
+        }
+
+        $validatedData = $request->validate($rules);
 
         if ($request->file('image')) {
             if ($request->oldImage) {

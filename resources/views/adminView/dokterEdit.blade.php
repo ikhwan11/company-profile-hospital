@@ -13,7 +13,7 @@
     </nav>
 </div>
 <div class="col-lg-8">
-    <form method="POST" action="/dashboard/dokter/{{$dokter->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/dashboard/dokter/{{$dokter->slug}}" enctype="multipart/form-data">
         @method('put')
         @csrf
         <div class="mb-3">
