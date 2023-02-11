@@ -20,7 +20,7 @@
             <div class="card">
                 @if($data->image)
                 <div style="max-height: 350px; overflow:hidden;">
-                    <img src="{{asset('storage/'.$data->image)}}" class="card-img-top">
+                    <img src="{{asset('images/blog-image/'.$data->image)}}" class="card-img-top">
                 </div>
                 @else
                 <img src="{{asset('TemplateAdmin')}}/assets/img/card.jpg" class="card-img-top">

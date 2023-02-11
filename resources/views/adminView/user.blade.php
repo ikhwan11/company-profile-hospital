@@ -43,7 +43,7 @@
                         <tbody>
                             @foreach($users as $user)
                             <tr class="align-middle">
-                                <td><img src="{{ asset('storage/'.$user->image) }}" alt="" width="100"></td>
+                                <td><img src="{{ asset('images/user-image/'.$user->image) }}" alt="" width="100"></td>
                                 <td>{{ $user->nama }}</td>
 
                                 @if($user->role == '1')

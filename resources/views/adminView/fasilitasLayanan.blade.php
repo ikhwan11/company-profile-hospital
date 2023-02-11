@@ -42,7 +42,7 @@
                         <tbody>
                             @foreach($fasilitas as $fas)
                             <tr class="align-middle">
-                                <td><img src="{{asset('storage/'.$fas->image)}}" alt="" width="250"></td>
+                                <td><img src="{{asset('images/fasilitas-layanan-image/'.$fas->image)}}" alt="" width="250"></td>
                                 <td>{{$fas->nama_fasilitas}}</td>
                                 <td>{{ $fas->kategori }}</td>
                                 <td>

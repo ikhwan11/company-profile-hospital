@@ -62,7 +62,7 @@
                                 <td>{{$book->tahun}}</td>
                                 <td>{{$book->folder->nama_folder}}</td>
                                 <td>
-                                    <a href="/storage/{{$book->file}}"><button class="btn btn-secondary" title="Download Buku"><i class="bi bi-download"></i></button></a>
+                                    <a href="/file/file-buku/{{$book->file_buku}}"><button class="btn btn-secondary" title="Download Buku"><i class="bi bi-download"></i></button></a>
                                     <form action="/dashboard/e-library/{{$book->id}}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf

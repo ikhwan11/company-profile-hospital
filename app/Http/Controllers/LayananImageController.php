@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\LayananImage;
 use App\Models\Layanan_poliklinik;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class LayananImageController extends Controller
 {
@@ -18,37 +18,26 @@ class LayananImageController extends Controller
         ]);
     }
 
-    public function create()
-    {
-    }
 
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'layanan_id' => 'required',
             'image' => 'required|image|file|max:5120',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('layanan-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/layanan-poliklinik-image'), $imageName);
 
-        LayananImage::create($validatedData);
+        LayananImage::create([
+            'layanan_id' => $request->layanan_id,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/layanan-poliklinik')->with('pesan', 'gambar layanan berhasil ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\LayananImage  $layananImage
-     * @return \Illuminate\Http\Response
-     */
-    public function show(LayananImage $layananImage)
-    {
-        //
-    }
 
     public function edit(LayananImage $layananImage)
     {
@@ -67,13 +56,18 @@ class LayananImageController extends Controller
 
         if ($request->file('image')) {
             if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+                File::delete(public_path('/images/layanan-poliklinik-image/' . $layananImage->image));
             }
-            $validatedData['image'] = $request->file('image')->store('layanan-images');
+            $validatedData['image'] =
+                $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/layanan-poliklinik-image'), $imageName);
         }
 
         LayananImage::where('id', $layananImage->id)
-            ->update($validatedData);
+            ->update([
+                'layanan_id' => $request->layanan_id,
+                'image' => $imageName,
+            ]);
 
         return redirect('/dashboard/layananImage')->with('pesan', 'gambar layanan berhasil diupdate');
     }
@@ -82,7 +76,7 @@ class LayananImageController extends Controller
     public function destroy(LayananImage $layananImage)
     {
         if ($layananImage->image) {
-            Storage::delete($layananImage->image);
+            File::delete(public_path('/images/layanan-poliklinik-image/' . $layananImage->image));
         }
 
         LayananImage::destroy($layananImage->id);

@@ -30,7 +30,7 @@
             <div class="latest-post">
                 <div class="latest-post-media">
                     <a href="#" class="latest-post-img">
-                        <img loading="lazy" class="img-fluid" src="{{asset('Storage/'.$fas->image)}}" alt="img">
+                        <img loading="lazy" class="img-fluid" src="{{asset('images/fasilitas-layanan-image/'.$fas->image)}}" alt="img">
                     </a>
                 </div>
                 <div class="post-body">

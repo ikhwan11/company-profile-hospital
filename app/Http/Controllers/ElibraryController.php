@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Elibrary;
 use App\Models\Folder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ElibraryController extends Controller
 {
@@ -29,7 +29,7 @@ class ElibraryController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'penulis' => 'required|max:255',
             'tahun' => 'required|max:255',
@@ -37,11 +37,16 @@ class ElibraryController extends Controller
             'file_buku' => 'required|file|mimes:pdf',
         ]);
 
-        if ($request->file('file_buku')) {
-            $validatedData['file_buku'] = $request->file('file_buku')->store('elibrary-file');
-        }
+        $fileName = time() . '.' . $request->file_buku->extension();
+        $request->file_buku->move(public_path('file/file-buku'), $fileName);
 
-        Elibrary::create($validatedData);
+        Elibrary::create([
+            'title' => $request->title,
+            'penulis' => $request->penulis,
+            'tahun' => $request->tahun,
+            'folder_id' => $request->folder_id,
+            'file_buku' => $fileName,
+        ]);
 
         return redirect('/dashboard/e-library')->with('pesan', 'buku Berhasil ditambah');
     }
@@ -50,7 +55,7 @@ class ElibraryController extends Controller
     public function destroy(Elibrary $elibrary, $id)
     {
         if ($elibrary->file_buku) {
-            Storage::delete($elibrary->file_buku);
+            File::delete(public_path('/file/file-buku/' . $elibrary->file_buku));
         }
 
         Elibrary::destroy($id);

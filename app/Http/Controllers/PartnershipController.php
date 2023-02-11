@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Partnership;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PartnershipController extends Controller
 {
@@ -33,11 +33,13 @@ class PartnershipController extends Controller
             'image' => 'required|image|file|max:5120',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('partner-logos');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/partner-image'), $imageName);
 
-        Partnership::create($validatedData);
+        Partnership::create([
+            'nama_partner' => $request->nama_partner,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/partnership')->with('pesan', 'Partner berhasil ditambahkan');
     }
@@ -45,7 +47,7 @@ class PartnershipController extends Controller
     public function destroy(Partnership $partnership)
     {
         if ($partnership->image) {
-            Storage::delete($partnership->image);
+            File::delete(public_path('/images/banner-image/' . $partnership->image));
         }
 
         Partnership::destroy($partnership->id);

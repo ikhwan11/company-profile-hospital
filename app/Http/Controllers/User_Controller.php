@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\File;
 
 class User_Controller extends Controller
 {
@@ -43,13 +44,17 @@ class User_Controller extends Controller
             ]
         );
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('user-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/user-image'), $imageName);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
-
-        user::create($validatedData);
+        User::create([
+            'nama' => $request->nama,
+            'role' => $request->role,
+            'email' => $request->email,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'image' => $imageName,
+        ]);
 
         Session::flash('pesan', 'User berhasil ditambah');
 
@@ -66,19 +71,24 @@ class User_Controller extends Controller
 
     public function update(Request $request, User $user)
     {
-        $validatedData = $request->validate(
+        $request->validate(
             [
                 'password' => 'required|min:6|max:255'
             ]
         );
+
         User::where('id', $user->id)
-            ->update($validatedData);
+            ->update(['password' => Hash::make($request->password)]);
 
         return redirect('/dashboard/user')->with('pesan', 'User berhasil di Update');
     }
 
     public function destroy(User $user)
     {
+        if ($user->image) {
+            File::delete(public_path('/images/user-image/' . $user->image));
+        }
+
         User::destroy($user->id);
 
         return redirect('/dashboard/user')->with('pesan', 'User berhasil di hapus');

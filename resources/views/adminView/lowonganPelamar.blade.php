@@ -56,7 +56,7 @@
                         </div>
                         <!-- endmodal -->
 
-                        <a href="/storage/{{$data->cv}}"><button class="btn btn-warning" title="Download CV"><i class="bi bi-download"></i></button> </a>
+                        <a href="/file/file-lamaran/{{$data->cv}}"><button class="btn btn-warning" title="Download CV"><i class="bi bi-download"></i></button> </a>
 
                         <form action="/dashboard/lamaran/{{$data->id}}" method="POST" class="d-inline">
                             @method('delete')

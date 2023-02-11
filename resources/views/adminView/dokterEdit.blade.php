@@ -126,7 +126,7 @@
             <input type="hidden" name="oldImage" value="{{$dokter->image}}">
 
             @if($dokter->image)
-            <img src="{{asset('storage/'.$dokter->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+            <img src="{{asset('images/dokter-image/'.$dokter->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
             @else
             <img class="img-preview img-fluid mb-3 col-sm-5">
             @endif

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Galeri;
 use App\Models\KategoriGaleri;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class GaleriController extends Controller
 {
@@ -29,7 +29,7 @@ class GaleriController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title_galeri' => 'required|max:255',
             'slug' => 'required',
             'keterangan' => 'required',
@@ -37,11 +37,16 @@ class GaleriController extends Controller
             'image' => 'required|image|file|max:5120'
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('galeri-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/galeri-image'), $imageName);
 
-        Galeri::create($validatedData);
+        Galeri::create([
+            'title_galeri' => $request->title_galeri,
+            'slug' => $request->slug,
+            'keterangan' => $request->keterangan,
+            'kategori_id' => $request->kategori_id,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/galeri')->with('pesan', 'Foto galeri berhasil ditambah');
     }
@@ -50,7 +55,7 @@ class GaleriController extends Controller
     public function destroy(Galeri $galeri)
     {
         if ($galeri->image) {
-            Storage::delete($galeri->image);
+            File::delete(public_path('/images/galeri-image/' . $galeri->image));
         }
 
         Galeri::destroy($galeri->id);

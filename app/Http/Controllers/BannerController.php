@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class BannerController extends Controller
 {
@@ -25,18 +26,21 @@ class BannerController extends Controller
         ]);
     }
 
+
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'banner_title' => 'required|max:255',
             'image' => 'image|file|max:5120',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('banner-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/banner-image'), $imageName);
 
-        Banner::create($validatedData);
+        Banner::create([
+            'banner_title' => $request->banner_title,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/banner')->with('pesan', 'Banner berhasil ditambah');
     }
@@ -67,13 +71,18 @@ class BannerController extends Controller
 
         if ($request->file('image')) {
             if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+                File::delete(public_path('/images/banner-image/' . $banner->image));
             }
-            $validatedData['image'] = $request->file('image')->store('banner-images');
+            $validatedData['image'] =
+                $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/banner-image'), $imageName);
         }
 
         Banner::where('id', $banner->id)
-            ->update($validatedData);
+            ->update([
+                'banner_title' => $request->banner_title,
+                'image' => $imageName,
+            ]);
 
         return redirect('/dashboard/banner')->with('pesan', 'Banner berhasil di Update');
     }
@@ -81,7 +90,7 @@ class BannerController extends Controller
     public function destroy(Banner $banner)
     {
         if ($banner->image) {
-            Storage::delete($banner->image);
+            File::delete(public_path('/images/banner-image/' . $banner->image));
         }
 
         Banner::destroy($banner->id);

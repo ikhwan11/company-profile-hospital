@@ -28,7 +28,7 @@
 <span>
     <h5 class="card-title">{{ $data->banner_title }}</h5>
 </span>
-<img src="{{ asset('storage/'.$data->image) }}" class="img-fluid" alt="...">
+<img src="{{ asset('images/banner-image/'.$data->image) }}" class="img-fluid" alt="...">
 
 
 

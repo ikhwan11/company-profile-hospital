@@ -22,7 +22,7 @@
     @foreach($data as $images)
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img src="{{asset('storage/'.$images->image)}}" class="card-img-top" alt="...">
+            <img src="{{asset('images/layanan-poliklinik-image/'.$images->image)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><small class="text-muted">Nama layanan:</small><br> {{ $images->layanan->poliklinik }}</h5>
                 <a href="/dashboard/layananImage/{{$images->id}}/edit" class="btn btn-primary d-inline" title="Edit Gambar"><i class="bi bi-pencil-square"></i></a>

@@ -13,7 +13,7 @@
         @foreach($images as $image)
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
             <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                <img src="{{asset('storage/'.$image->image)}}" alt="" class="w-100">
+                <img src="{{asset('images/layanan-poliklinik-image/'.$image->image)}}" alt="" class="w-100">
             </div>
         </div>
         @endforeach
@@ -42,7 +42,7 @@
                 <div class="item">
                     <div class="ts-team-wrapper">
                         <div class="team-img-wrapper">
-                            <img loading="lazy" class="w-100" src="{{ asset('storage/'.$dokter->image) }}" alt="team-img">
+                            <img loading="lazy" class="w-100" src="{{ asset('images/dokter-image/'.$dokter->image) }}" alt="team-img">
                         </div>
                         <div class="ts-team-content">
                             <p class="text-white"> <Strong>{{$dokter->nama}}</Strong></p>

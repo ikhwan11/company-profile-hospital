@@ -28,7 +28,7 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                <img src="{{ asset('storage/'. $partner->image) }}" class="img-fluid" width="100" title="{{$partner->nama_partner}}">
+                                <img src="{{ asset('images/partner-image/'. $partner->image) }}" class="img-fluid" width="100" title="{{$partner->nama_partner}}">
                             </th>
                             <th>
                                 <form action="/dashboard/partnership/{{$partner->id}}" method="POST" class="d-inline">

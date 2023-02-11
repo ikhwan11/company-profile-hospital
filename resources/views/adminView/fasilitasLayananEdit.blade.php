@@ -63,7 +63,7 @@
                 <input type="hidden" name="oldImage" value="{{$fasilitas->image}}">
 
                 @if($fasilitas->image)
-                <img src="{{asset('storage/'.$fasilitas->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                <img src="{{asset('images/fasilitas-layanan-image/'.$fasilitas->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                 @else
                 <img class="img-preview img-fluid mb-3 col-sm-5">
                 @endif

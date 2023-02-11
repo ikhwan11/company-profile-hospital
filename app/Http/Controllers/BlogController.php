@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -32,7 +32,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
 
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:blogs',
             'category_id' => 'required',
@@ -40,14 +40,18 @@ class BlogController extends Controller
             'body' => 'required',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/blog-image'), $imageName);
 
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(Strip_tags($request->body), 200);
-
-        Blog::create($validatedData);
+        Blog::create([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'category_id' => $request->category_id,
+            'body' => $request->body,
+            'user_id' => auth()->user()->id,
+            'excerpt' => Str::limit(Strip_tags($request->body), 200),
+            'image' => $imageName,
+        ]);
 
         return redirect('/blog')->with('pesan', 'Post berhasil ditambah');
     }
@@ -83,20 +87,27 @@ class BlogController extends Controller
             $rules['slug'] = 'required|unique:blogs';
         }
 
-        $validatedData = $request->validate($rules);
+        $request->validate($rules);
 
         if ($request->file('image')) {
             if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+                File::delete(public_path('/images/blog-image/' . $blog->image));
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $rules['image'] =
+                $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/blog-image'), $imageName);
         }
 
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(Strip_tags($request->body), 200);
-
         Blog::where('id', $blog->id)
-            ->update($validatedData);
+            ->update([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'category_id' => $request->category_id,
+                'body' => $request->body,
+                'user_id' => auth()->user()->id,
+                'excerpt' => Str::limit(Strip_tags($request->body), 200),
+                'image' => $imageName,
+            ]);
 
         return redirect('/blog')->with('pesan', 'Post berhasil di Update');
     }
@@ -105,7 +116,7 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         if ($blog->image) {
-            Storage::delete($blog->image);
+            File::delete(public_path('/images/blog-image/' . $blog->image));
         }
 
         Blog::destroy($blog->id);

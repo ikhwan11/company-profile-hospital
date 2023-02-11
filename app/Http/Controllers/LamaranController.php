@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lamaran;
 use App\Models\Lowongan;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class LamaranController extends Controller
 {
@@ -21,7 +21,7 @@ class LamaranController extends Controller
     public function destroy(Lamaran $lamaran)
     {
         if ($lamaran->cv) {
-            Storage::delete($lamaran->cv);
+            File::delete(public_path('/file/file-lamaran/' . $lamaran->cv));
         }
 
         Lamaran::destroy($lamaran->id);

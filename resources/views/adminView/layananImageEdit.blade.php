@@ -20,8 +20,9 @@
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
             <input type="hidden" name="oldImage" value="{{$data->image}}">
+            <input type="hidden" name="layanan_id" value="{{$data->layanan_id}}">
             @if($data->image)
-            <img src="{{asset('storage/'.$data->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+            <img src="{{asset('images/layanan-poliklinik-image/'.$data->image)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
             @else
             <img class="img-preview img-fluid mb-3 col-sm-5">
             @endif

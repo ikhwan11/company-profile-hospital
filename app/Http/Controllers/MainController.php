@@ -157,9 +157,18 @@ class MainController extends Controller
             'cv' => 'required|file|max:2048|mimes:pdf',
         ]);
 
-        if ($request->file('cv')) {
-            $validatedData['cv'] = $request->file('cv')->store('karir-cv');
-        }
+        $fileName = time() . '.' . $request->cv->extension();
+        $request->cv->move(public_path('file/file-lamaran'), $fileName);
+
+        Lamaran::create([
+            'nama_pelamar' => $request->nama_pelamar,
+            'lowongan_id' => $request->lowongan_id,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'tentang_pelamar' => $request->tentang_pelamar,
+            'cv' => $fileName,
+        ]);
 
         Lamaran::create($validatedData);
 

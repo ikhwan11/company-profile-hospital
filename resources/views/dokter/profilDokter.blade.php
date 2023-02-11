@@ -62,7 +62,7 @@ $bgImage3 = asset('Template/images/slider-layanan/bg3.jpg');
                 <div class="item">
                     <div class="ts-team-wrapper">
                         <div class="team-img-wrapper">
-                            <img loading="lazy" class="w-100" src="{{ asset('storage/'.$dokter->image) }}" alt="team-img">
+                            <img loading="lazy" class="w-100" src="{{ asset('images/dokter-image/'.$dokter->image) }}" alt="team-img">
                         </div>
                         <div class="ts-team-content">
                             <p class="text-white"> <Strong>{{$dokter->nama}}</Strong></p>

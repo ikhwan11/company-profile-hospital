@@ -6,7 +6,7 @@ use App\Models\Dokter;
 use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
 use App\Models\Layanan_poliklinik;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class DokterController extends Controller
 {
@@ -32,7 +32,7 @@ class DokterController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'nama' => 'required|max:255',
             'slug' => 'required|unique:dokters',
             'poliklinik_id' => 'required',
@@ -45,11 +45,21 @@ class DokterController extends Controller
             'riwayat' => 'required',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('dokter-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/dokter-image'), $imageName);
 
-        Dokter::create($validatedData);
+        Dokter::create([
+            'nama' => $request->nama,
+            'slug' => $request->slug,
+            'poliklinik_id' => $request->poliklinik_id,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'alamat_domisili' => $request->alamat_domisili,
+            'riwayat' => $request->riwayat,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/dokter')->with('pesan', 'dokter berhasil ditambah');
     }
@@ -98,13 +108,26 @@ class DokterController extends Controller
 
         if ($request->file('image')) {
             if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+                File::delete(public_path('/images/dokter-image/' . $dokter->image));
             }
-            $validatedData['image'] = $request->file('image')->store('dokter-images');
+            $validatedData['image'] =
+                $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/dokter-image'), $imageName);
         }
 
         Dokter::where('id', $dokter->id)
-            ->update($validatedData);
+            ->update([
+                'nama' => $request->nama,
+                'slug' => $request->slug,
+                'poliklinik_id' => $request->poliklinik_id,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'no_hp' => $request->no_hp,
+                'email' => $request->email,
+                'alamat_domisili' => $request->alamat_domisili,
+                'riwayat' => $request->riwayat,
+                'image' => $imageName,
+            ]);
 
         return redirect('/dashboard/dokter')->with('pesan', 'dokter berhasil diupdate');
     }
@@ -113,7 +136,7 @@ class DokterController extends Controller
     public function destroy(Dokter $dokter)
     {
         if ($dokter->image) {
-            Storage::delete($dokter->image);
+            File::delete(public_path('/images/dokter-image/' . $dokter->image));
         }
 
         Dokter::destroy($dokter->id);

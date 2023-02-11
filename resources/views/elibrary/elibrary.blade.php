@@ -39,7 +39,7 @@
                     </h4>
                     <span>{{$lib->penulis}} - {{$lib->tahun}}</span>
                 </div>
-                <a href="{{url('storage/'.$lib->file_buku)}}" class="btn btn-primary"><i class="fas fa-download"></i></a>
+                <a href="{{url('file/file-buku/'.$lib->file_buku)}}" class="btn btn-primary"><i class="fas fa-download"></i></a>
             </div>
         </div>
         @endforeach

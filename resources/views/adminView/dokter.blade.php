@@ -57,7 +57,7 @@
                         <tbody>
                             @foreach($dokters as $dokter)
                             <tr class="align-middle">
-                                <td><img src="{{ asset('storage/'.$dokter->image) }}" alt="" width="100"></td>
+                                <td><img src="{{ asset('images/dokter-image/'.$dokter->image) }}" alt="" width="100"></td>
                                 <td>{{$dokter->nama}}</td>
                                 <td>{{$dokter->jenis_kelamin}}</td>
                                 <td>{{$dokter->no_hp}}</td>

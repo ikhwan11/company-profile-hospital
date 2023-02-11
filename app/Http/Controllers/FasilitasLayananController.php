@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fasilitas_Layanan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class FasilitasLayananController extends Controller
 {
@@ -27,7 +27,7 @@ class FasilitasLayananController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'nama_fasilitas' => 'required|max:255',
             'slug' => 'required|unique:fasilitas__layanans',
             'image' => 'required|image|file|max:5120',
@@ -35,19 +35,20 @@ class FasilitasLayananController extends Controller
             'ket' => 'required',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('fasilitas-images');
-        }
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/fasilitas-layanan-image'), $imageName);
 
-        Fasilitas_Layanan::create($validatedData);
+        Fasilitas_Layanan::create([
+            'nama_fasilitas' => $request->nama_fasilitas,
+            'slug' => $request->slug,
+            'kategori' => $request->kategori,
+            'ket' => $request->ket,
+            'image' => $imageName,
+        ]);
 
         return redirect('/dashboard/fasilitas-layanan')->with('pesan', 'Fasilitas layanan berhasil ditambah');
     }
 
-
-    public function show(Fasilitas_Layanan $fasilitas_Layanan)
-    {
-    }
 
 
     public function edit($id)
@@ -70,9 +71,11 @@ class FasilitasLayananController extends Controller
 
         if ($request->file('image')) {
             if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+                File::delete(public_path('/images/fasilitas-layanan-image/' . $request->oldImage));
             }
-            $validatedData['image'] = $request->file('image')->store('fasilitas-images');
+            $validatedData['image'] =
+                $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/fasilitas-layanan-image'), $imageName);
         }
 
         Fasilitas_Layanan::where('id', $id)
@@ -84,7 +87,7 @@ class FasilitasLayananController extends Controller
     public function destroy(Fasilitas_Layanan $fasilitas_Layanan, $id)
     {
         if ($fasilitas_Layanan->image) {
-            Storage::delete($fasilitas_Layanan->image);
+            File::delete(public_path('/images/fasilitas-layanan-image/' . $fasilitas_Layanan->image));
         }
 
         Fasilitas_Layanan::destroy($id);

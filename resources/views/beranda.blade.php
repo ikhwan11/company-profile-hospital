@@ -23,7 +23,7 @@ $bg = asset('Template');
 
     @foreach($banners as $banner)
     @php
-    $bgImage = asset('Storage/'.$banner->image);
+    $bgImage = asset('images/banner-image/'.$banner->image);
     @endphp
 
     <div class="banner-carousel-item" style="background-image:url({{$bgImage}})"></div>
@@ -175,8 +175,8 @@ $bg = asset('Template');
 
                     <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;Poliklinik&quot;]">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="{{ asset('storage/'.$galeri->image) }}" aria-label="project-img">
-                                <img class="img-fluid" src="{{ asset('storage/'.$galeri->image) }}" alt="project-img" style="max-height:350px ; overflow:hidden;">
+                            <a class="gallery-popup" href="{{ asset('images/galeri-image/'.$galeri->image) }}" aria-label="project-img">
+                                <img class="img-fluid" src="{{ asset('images/galeri-image/'.$galeri->image) }}" alt="project-img" style="max-height:350px ; overflow:hidden;">
                                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                             </a>
                             <div class="project-item-info">
@@ -216,7 +216,7 @@ $bg = asset('Template');
             @foreach($partnership as $partner)
             <div class="col-sm-2 col-6">
                 <figure class="clients-logo">
-                    <a href="#"><img loading="lazy" class="img-fluid" src="{{asset('storage/'.$partner->image)}}" alt="clients-logo" title="{{$partner->nama_partner}}" /></a>
+                    <a href="#"><img loading="lazy" class="img-fluid" src="{{asset('images/partner-image/'.$partner->image)}}" alt="clients-logo" title="{{$partner->nama_partner}}" /></a>
                 </figure>
             </div>
             @endforeach
@@ -268,7 +268,7 @@ $bg = asset('Template');
                 <div class="latest-post">
                     <div class="latest-post-media">
                         <a href="/artikel/{{$post->slug}}" class="latest-post-img">
-                            <img loading="lazy" class="img-fluid" src="{{asset('storage/'.$post->image)}}" alt="img">
+                            <img loading="lazy" class="img-fluid" src="{{asset('images/blog-image/'.$post->image)}}" alt="img">
                         </a>
                     </div>
                     <div class="post-body">
